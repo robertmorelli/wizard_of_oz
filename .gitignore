@@ -9,8 +9,8 @@ __pycache__/
 compilers/build/
 native/build/
 native/one/
-native/anomalies/knucleotide-min/min-O*
-native/anomalies/knucleotide-min/tiny-O*
+native/anomalies/knucleotide/min-O*
+native/anomalies/knucleotide/tiny-O*
 *.o
 *.trace/
 

@@ -1,29 +1,34 @@
 # wizard_of_oz
 
-Speed vs size optimization levels, measured on the Benchmarks Game programs:
-does optimizing for speed (O3) actually buy speed over optimizing for size (Oz)?
+Does optimizing for speed (`-O3` / `-O`) actually beat optimizing for size (`-Os` / `-Oz` / `-Osize`)?
 
-- `programs/` — the BG programs and their ports, copied from utu's `benchmarks/bg`
-  (each port exports `bench(n)` returning a checksum, and `setup(n)` for input programs).
-- `wasm/` — every port's wasm put through Binaryen `wasm-opt -O3` and `-Oz`, timed in d8.
-  - `all.json` raw results, `all.log` the run's log, `opt-results.json` the flattened rows.
-  - `bench-opt.mjs` the harness (a variant of utu's `scripts/benchmark-bg.mjs`; run from the utu repo).
-  - `stats.mjs` paired statistics; `index.html` the dashboard page.
-  - Dashboard: https://claude.ai/artifact/VMx8YZxw5AQKj7ekqWDFfp
-- `native/` — the same ports built natively (arm64 macOS) at each language's speed and size levels.
-  - `node native/run-native.mjs [program ...] [--langs=c,cpp,rust,swift]`
-  - C/C++: Apple clang `-O3` / `-Os` / `-Oz`, with `-ffp-contract=off` (wasm has no fused
-    multiply-add; clang fuses on arm64 by default, which changed mandelbrot's checksum). Rust: `opt-level` 3 / s / z. Swift: `-O` / `-Osize`.
-  - `driver.c` times `bench` like the d8 driver (setup untimed, 1 run, warmups, median of samples).
-  - `shim/x86/` maps the C/C++ ports' x86 intrinsics to NEON through SIMDe (rsqrt/rcp made exact,
-    as Emscripten does, so checksums match the wasm runs). `shim/rust/wasm32.rs` maps the Rust
-    ports' `core::arch::wasm32` intrinsics to NEON.
-  - Size: `text` is the linked `__TEXT,__text` bytes; `stripped` the stripped executable.
-  - Go, Haskell, Dart, Kotlin have no size level and are left out; JS, AssemblyScript, MoonBit and utu are wasm-only here.
+Measured across three setups:
 
-## Wasm findings (Nov 7, 2026; wasm-opt 128, d8)
+1. **WebAssembly (`wasm/`, `engines/`)** — Benchmarks Game ports run through Binaryen `wasm-opt` at `-O3`, `-Os`, and `-Oz` (plus source-level size flags), timed in V8 (`d8`, TurboFan and Liftoff), JavaScriptCore, and Wasmtime.
+2. **Native Benchmarks Game (`native/`)** — C, C++, Rust, and Swift ports compiled natively on macOS `arm64` and Linux `x86_64`, with paired runs and root-cause writeups for the cases where size builds won.
+3. **Compilers (`compilers/`)** — Four JPL compilers (Rust and Zig) compiled at `-O3`/`-Os`/`-Oz`, timed warm and cold on `arm64` and `x86_64`.
 
-Oz ÷ O3 across 108 language × program points (95% CI, languages resampled):
-run time 0.987 [0.971, 0.998], size 0.962 [0.936, 0.983]. O3 bought no speed over Oz;
-where they differed, Oz usually won, often because O3's partial inlining exhausted V8's own
-inlining budget (utu tuned nbody/spectralnorm ~2x slower).
+## Summary
+
+- **WebAssembly (`wasm-opt -Oz` vs `-O3`, V8/d8, 108 language × program pairs):** `Oz / O3` run time **0.987** (95% CI `[0.971, 0.998]`), binary size **0.962** (`[0.936, 0.983]`). `-O3` bought no speed over `-Oz`; where they differed, `-Oz` usually won because `-O3`'s partial inlining blew V8's inlining budget.
+- **Native Benchmarks Game (`arm64` & `x86_64`, paired runs):** `-O3` won almost everywhere (54/70 losses for small builds on Mac, 57/70 on x86). Four real Mac `arm64` wins (`knucleotide` C++ `-Os` 0.70×, `binarytrees` C++ `-Oz` 0.89×, `spectralnorm` Swift `-Osize` 0.93×, `fannkuchredux` C `-Oz` 0.95×) came down to specific inlining, register-save, scheduling, and `/2` lowering quirks — documented in [native/ANOMALIES.md](native/ANOMALIES.md).
+- **Compilers (warm & cold, paired runs):** `-O3` won across the board once measurement artifacts were removed (hyperfine post-purge launch overhead on macOS; Hyper-V free-page reporting under WSL2 on x86). Details in [compilers/FINDINGS.md](compilers/FINDINGS.md).
+
+## Layout
+
+- `programs/` — Benchmarks Game ports (copied from [utu](https://github.com/robertmorelli/utu)).
+- `wasm/` — Binaryen `wasm-opt` harness, stats script, and `data/`.
+- `engines/` — Multi-engine Wasm runner (`liftoff`, `jsc`, `wasmtime`) and `all.json`.
+- `native/` — Native build/timing harness, SIMD shims, `data/`, [ANOMALIES.md](native/ANOMALIES.md), and minimal repros in `anomalies/`.
+- `compilers/` — Compiler timing harness (`timeit.c`, `accurate.sh`), `data/`, and [FINDINGS.md](compilers/FINDINGS.md).
+- `analysis/` — Summary scripts (`compilers.py`, `native.py`, `export_rows.py`) and `accurate-rows.json`.
+
+## Reproducing the summaries
+
+```bash
+node wasm/stats.mjs
+python3 analysis/native.py
+python3 analysis/compilers.py arm64 x86
+```
+
+Earlier raw logs and intermediate experiment files are preserved on the [`old`](../../tree/old) branch.

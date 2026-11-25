@@ -1,5 +1,5 @@
 import fs from 'node:fs';
-const rows = JSON.parse(fs.readFileSync('.tmp/bg-opt/opt-results.json', 'utf8')).filter(r => r.ok && r.o3_ms && r.oz_ms);
+const rows = JSON.parse(fs.readFileSync(process.argv[2] ?? 'wasm/data/opt-results.json', 'utf8')).filter(r => r.ok && r.o3_ms && r.oz_ms);
 const lang = p => p.startsWith('utu') ? 'utu' : p;
 const anomaly = r => r.program === 'spectralnorm' && ['Dart', 'MoonBit'].includes(r.port);
 let seed = 12345; const rnd = () => (seed = (seed * 1103515245 + 12345) % 2147483648) / 2147483648;
