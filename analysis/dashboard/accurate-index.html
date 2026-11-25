@@ -1,0 +1,266 @@
+<meta name="dash-one-writer">
+<style>
+  .wz { display: flex; flex-direction: column; gap: var(--cds-gap-lg); font-family: var(--font-anthropic-sans); }
+  .wz h1 { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); margin: 0; text-wrap: balance; }
+  .wz h2 { font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); margin: 0; }
+  .wz-lede { margin: 0; color: var(--color-fg); max-width: 70ch; }
+  .wz-lede b { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: 1.25em; font-variant-numeric: tabular-nums; }
+  .wz-note { margin: 0; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); max-width: 75ch; }
+  .wz-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr)); gap: var(--cds-gap-md); }
+  .wz-card { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-lg); display: flex; flex-direction: column; gap: var(--cds-gap-sm); min-width: 0; }
+  .wz-legend { display: flex; gap: var(--cds-gap-md); flex-wrap: wrap; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); align-items: center; }
+  .wz-legend span { display: inline-flex; align-items: center; gap: var(--cds-gap-xs); }
+  .wz-sw { width: 0.625rem; height: 0.625rem; border-radius: 50%; display: inline-block; background: var(--cds-chart-muted); }
+  .wz-sw.wz-hollow { background: transparent; border: 2px solid var(--color-fg-muted); box-sizing: border-box; }
+  .wz-sw.wz-zone { border-radius: 2px; background: var(--color-ok); opacity: .25; }
+  .wz-forest { position: relative; min-height: 12rem; }
+  .wz-forest svg { display: block; }
+  .wz-tip { position: absolute; pointer-events: none; background: var(--cds-surface-popover); border: 1px solid var(--cds-border); border-radius: var(--cds-radius); box-shadow: var(--cds-shadow-popover); padding: var(--cds-pad-xs) var(--cds-pad-sm); font-size: var(--cds-font-size-caption); white-space: nowrap; font-variant-numeric: tabular-nums; z-index: 2; }
+  .wz-tip .wz-tip-h { color: var(--cds-text-secondary); margin-bottom: 2px; }
+  .wz-tip .wz-tip-r { display: flex; gap: var(--cds-gap-xs); align-items: center; }
+  .wz-scroll { overflow-x: auto; }
+  .wz table { border-collapse: collapse; width: 100%; font-size: var(--cds-font-size-caption); font-variant-numeric: tabular-nums; }
+  .wz th { text-align: left; font-weight: var(--cds-font-weight-medium); color: var(--color-fg-muted); padding: var(--cds-pad-xs) var(--cds-pad-sm); border-bottom: 1px solid var(--color-border-line); white-space: nowrap; }
+  .wz td { padding: var(--cds-pad-xs) var(--cds-pad-sm); border-bottom: 1px solid var(--color-border-line); white-space: nowrap; }
+  .wz .wz-num { text-align: right; }
+  .wz-ok { color: var(--color-ok); }
+  .wz-bad { color: var(--color-bad); }
+  .wz details { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+  .wz details dl { display: grid; grid-template-columns: max-content 1fr; gap: var(--cds-gap-xs) var(--cds-gap-md); max-width: 80ch; }
+  .wz details dt { color: var(--color-fg); }
+  .wz details dd { margin: 0; }
+  [data-dash-source-state=refreshing] { opacity: .5; transition: opacity var(--cds-dur-slow); }
+</style>
+
+<div class="wz">
+  <header style="display:flex;flex-direction:column;gap:var(--cds-gap-sm)">
+    <h1 id="top">O3 vs Os vs Oz</h1>
+    <p class="wz-lede">Os/Oz beat O3 in <b data-draw="s-wins" data-source="summary" data-field="wins">—</b> of <b data-draw="s-total" data-source="summary" data-field="total">—</b> comparisons. <b data-draw="s-both" data-source="summary" data-field="both">—</b> of those wins hold on both machines.</p>
+    <p class="wz-note">Each number is small ÷ O3 time, the median over interleaved O3/small pairs. Below 1 means small is faster. A win or loss counts only when its 95% bootstrap interval stays on one side of 1. Mac is Apple silicon (arm64). x86 is a Ryzen 5 5600X under WSL2, pinned to one core.</p>
+  </header>
+
+  <div class="wz-grid">
+    <section class="wz-card" id="tally-card">
+      <h2>Wins, ties and losses</h2>
+      <p class="wz-note">Counted per comparison: program × language × level × machine.</p>
+      <div class="wz-scroll">
+        <table data-source="tally" data-row-key="suite,machine">
+          <thead><tr><th data-field="suite">Suite</th><th data-field="machine">Machine</th><th class="wz-num" data-field="win">Small wins</th><th class="wz-num" data-field="tie">Ties</th><th class="wz-num" data-field="loss">O3 wins</th></tr></thead>
+          <tbody data-draw="tally"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="wz-card" id="wins-card">
+      <h2>Every small win</h2>
+      <p class="wz-note">Sorted by size of the win. JPL rows name the compiler and the job it ran on t3.jpl.</p>
+      <div class="wz-scroll">
+        <table data-source="wins" data-row-key="id">
+          <thead><tr><th data-field="suite">Suite</th><th data-field="program">Program</th><th data-field="lang">Language / job</th><th data-field="level">Level</th><th data-field="machine">Machine</th><th class="wz-num" data-field="ratio">Small ÷ O3</th><th data-field="ci">95% interval</th></tr></thead>
+          <tbody data-draw="wins"></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <div class="wz-legend" aria-label="Legend">
+    <span><i class="wz-sw" data-series="0"></i>Mac</span>
+    <span><i class="wz-sw" data-series="1"></i>x86</span>
+    <span><i class="wz-sw wz-hollow"></i>Hollow: tie</span>
+    <span><i class="wz-sw wz-zone"></i>Shaded: small faster</span>
+    <span>Lines: 95% interval. Log scale.</span>
+  </div>
+
+  <section class="wz-card" id="native">
+    <h2>Benchmarks Game, native</h2>
+    <p class="wz-note">Each process's time is the median of 5 timed runs after 2 warmup runs.</p>
+    <div class="wz-forest" data-draw="forest" data-suite="Native" data-source="results"></div>
+  </section>
+
+  <div class="wz-grid">
+    <section class="wz-card" id="jpl-cold">
+      <h2>JPL compilers, cold</h2>
+      <p class="wz-note">Page cache dropped before every run. On x86 the tooltip also shows CPU time, which the WSL memory slowdown doesn't affect.</p>
+      <div class="wz-forest" data-draw="forest" data-suite="JPL cold" data-source="results"></div>
+    </section>
+    <section class="wz-card" id="jpl-warm">
+      <h2>JPL compilers, warm</h2>
+      <p class="wz-note">One untimed warmup run of each build first.</p>
+      <div class="wz-forest" data-draw="forest" data-suite="JPL warm" data-source="results"></div>
+    </section>
+  </div>
+
+  <details>
+    <summary>How this was measured</summary>
+    <dl>
+      <dt>Levels</dt><dd>O3 = speed build. Os/Oz = size builds. Rust opt-level 3/s/z, Swift -O/-Osize, Zig ReleaseFast/ReleaseSmall (no Os).</dd>
+      <dt>Pairs</dt><dd>O3 and the small build run back to back, alternating which goes first. The ratio is taken within each pair, then the median across pairs.</dd>
+      <dt>Interval</dt><dd>Bootstrap of the median paired ratio, resampling pairs.</dd>
+      <dt>JPL timing</dt><dd>Direct fork/exec/wait4 timer, no hyperfine. Cold drops the page cache first: purge on Mac, drop_caches on x86.</dd>
+      <dt>Native timing</dt><dd>Each benchmark's built-in driver: setup untimed, warmups, then the median of the timed runs.</dd>
+    </dl>
+  </details>
+</div>
+
+<script>
+  dash.calc('tally', {
+    title: 'Wins, ties, losses',
+    description: 'Count of each verdict per suite and machine.',
+    inputs: ['results'],
+    fn: (results) => d3.flatRollup(results, (v) => ({
+      win: v.filter((r) => r.verdict === 'win').length,
+      tie: v.filter((r) => r.verdict === 'tie').length,
+      loss: v.filter((r) => r.verdict === 'loss').length,
+    }), (r) => r.suite, (r) => r.machine).map(([suite, machine, c]) => ({suite, machine, ...c})),
+  });
+  dash.calc('wins', {
+    title: 'Small wins',
+    description: 'Comparisons whose whole 95% interval is below 1, smallest ratio first.',
+    inputs: ['results'],
+    fn: (results) => results.filter((r) => r.verdict === 'win').sort((a, b) => a.ratio - b.ratio)
+      .map((r) => ({id: r.id, suite: r.suite, program: r.program, lang: r.lang, level: r.level, machine: r.machine, ratio: r.ratio, ci: `${r.lo.toFixed(3)}–${r.hi.toFixed(3)}`})),
+  });
+  dash.calc('summary', {
+    title: 'Win summary',
+    description: 'Total small wins, total comparisons, and wins that hold on both machines.',
+    inputs: ['results'],
+    fn: (results) => {
+      const key = (r) => `${r.suite}|${r.program}|${r.lang}|${r.level}`;
+      const won = d3.rollup(results.filter((r) => r.verdict === 'win'), (v) => new Set(v.map((r) => r.machine)).size, key);
+      return [{wins: results.filter((r) => r.verdict === 'win').length, total: results.length, both: [...won.values()].filter((n) => n === 2).length}];
+    },
+  });
+
+  dash.onData(() => {
+    document.querySelectorAll('.wz-sw[data-series]').forEach((s) => { s.style.background = dash.colors[+s.dataset.series]; });
+  });
+
+  for (const f of ['wins', 'total', 'both']) {
+    dash.draw('s-' + f, (el) => {
+      const g = dash.data('summary');
+      el.textContent = g.status === 'ok' && g.data[0] ? d3.format(',')(g.data[0][f]) : '—';
+    });
+  }
+
+  dash.draw('tally', (tb) => {
+    const g = dash.data('tally');
+    tb.replaceChildren();
+    if (g.status !== 'ok') return;
+    for (const r of g.data) {
+      const tr = tb.insertRow();
+      const c = (t, cls) => { const td = tr.insertCell(); td.textContent = t; if (cls) td.className = cls; };
+      c(r.suite); c(r.machine);
+      c(r.win, 'wz-num' + (r.win ? ' wz-ok' : '')); c(r.tie, 'wz-num'); c(r.loss, 'wz-num');
+    }
+  });
+
+  dash.draw('wins', (tb) => {
+    const g = dash.data('wins');
+    tb.replaceChildren();
+    if (g.status !== 'ok') return;
+    for (const r of g.data) {
+      const tr = tb.insertRow();
+      tr.dataset.key = r.id;
+      for (const k of ['suite', 'program', 'lang', 'level', 'machine']) tr.insertCell().textContent = r[k];
+      const td = tr.insertCell(); td.textContent = r.ratio.toFixed(3); td.className = 'wz-num wz-ok';
+      tr.insertCell().textContent = r.ci;
+    }
+  });
+
+  const ORDER = {C: 0, 'C++': 1, Rust: 2, Swift: 3, lex: 0, parse: 1, typecheck: 2, Os: 0, Oz: 1};
+  const MACH = ['Mac', 'x86'];
+
+  dash.draw('forest', (el) => {
+    const g = dash.data('results');
+    el.replaceChildren();
+    if (g.status !== 'ok') { el.textContent = '—'; return; }
+    const rows = g.data.filter((r) => r.suite === el.dataset.suite);
+    const groups = d3.groups(rows, (r) => `${r.program}|${r.lang}|${r.level}`)
+      .map(([k, v]) => ({program: v[0].program, lang: v[0].lang, level: v[0].level, by: Object.fromEntries(v.map((r) => [r.machine, r]))}))
+      .sort((a, b) => d3.ascending(a.program, b.program) || ORDER[a.lang] - ORDER[b.lang] || ORDER[a.level] - ORDER[b.level]);
+
+    const W = Math.max(320, el.clientWidth || 800), rowH = 22, top = 34, bottom = 8;
+    const H = top + groups.length * rowH + bottom;
+    const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`)
+      .style('font-size', 'var(--cds-font-size-caption)').style('font-family', 'var(--font-anthropic-sans)');
+
+    // labels first, so the left margin fits the widest one
+    const lab = svg.append('g');
+    const progT = [], varT = [];
+    groups.forEach((d, i) => {
+      const first = i === 0 || groups[i - 1].program !== d.program;
+      if (first) progT.push(lab.append('text').attr('y', top + i * rowH + rowH / 2).attr('dy', '0.35em').attr('fill', 'var(--color-fg)').attr('font-weight', 500).text(d.program));
+      varT.push(lab.append('text').attr('y', top + i * rowH + rowH / 2).attr('dy', '0.35em').attr('fill', 'var(--color-fg-muted)').text(`${d.lang} ${d.level}`));
+    });
+    const pw = d3.max(progT, (t) => t.node().getComputedTextLength()) || 0;
+    const vw = d3.max(varT, (t) => t.node().getComputedTextLength()) || 0;
+    progT.forEach((t) => t.attr('x', 0));
+    varT.forEach((t) => t.attr('x', pw + 10));
+    const left = pw + vw + 22, right = 14;
+
+    const lo = Math.min(0.9, d3.min(rows, (r) => r.lo)) * 0.97, hi = Math.max(1.1, d3.max(rows, (r) => r.hi)) * 1.03;
+    const x = d3.scaleLog([lo, hi], [left, W - right]);
+    const cand = [0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.25, 1.5, 2, 3, 4, 5];
+    let ticks = cand.filter((t) => t >= lo && t <= hi);
+    // drop ticks that would collide
+    const kept = [];
+    for (const t of ticks) if (!kept.length || x(t) - x(kept[kept.length - 1]) >= 34 || t === 1) { if (t === 1 && kept.length && x(1) - x(kept[kept.length - 1]) < 34) kept.pop(); kept.push(t); }
+    ticks = kept;
+
+    const plot = svg.insert('g', ':first-child');
+    plot.append('rect').attr('x', x(lo)).attr('y', top - 4).attr('width', x(1) - x(lo)).attr('height', H - top - bottom + 4)
+      .attr('fill', 'var(--color-ok)').attr('opacity', 0.08);
+    // group separators
+    groups.forEach((d, i) => {
+      if (i > 0 && groups[i - 1].program !== d.program)
+        plot.append('line').attr('x1', 0).attr('x2', W - right).attr('y1', top + i * rowH).attr('y2', top + i * rowH).attr('stroke', 'var(--cds-chart-grid)');
+    });
+    for (const t of ticks) {
+      plot.append('line').attr('x1', x(t)).attr('x2', x(t)).attr('y1', top - 4).attr('y2', H - bottom)
+        .attr('stroke', t === 1 ? 'var(--cds-chart-reference)' : 'var(--cds-chart-grid)').attr('stroke-width', t === 1 ? 1.5 : 1);
+      plot.append('text').attr('x', x(t)).attr('y', top - 10).attr('text-anchor', 'middle').attr('fill', 'var(--color-fg-muted)').text(d3.format('~g')(t));
+    }
+    plot.append('text').attr('x', x(1) - 6).attr('y', 10).attr('text-anchor', 'end').attr('fill', 'var(--color-ok)').text('← small faster');
+    plot.append('text').attr('x', x(1) + 6).attr('y', 10).attr('fill', 'var(--color-fg-muted)').text('O3 faster →');
+
+    const marks = svg.append('g');
+    groups.forEach((d, i) => {
+      MACH.forEach((m, j) => {
+        const r = d.by[m]; if (!r) return;
+        const y = top + i * rowH + rowH / 2 + (j ? 4 : -4), col = dash.colors[j];
+        marks.append('line').attr('x1', x(r.lo)).attr('x2', x(r.hi)).attr('y1', y).attr('y2', y).attr('stroke', col).attr('stroke-width', 2).attr('stroke-linecap', 'round');
+        marks.append('circle').attr('cx', x(r.ratio)).attr('cy', y).attr('r', r.verdict === 'win' ? 4.5 : 3.5)
+          .attr('fill', r.verdict === 'tie' ? 'var(--color-panel)' : col).attr('stroke', r.verdict === 'tie' ? col : 'var(--color-panel)').attr('stroke-width', r.verdict === 'tie' ? 1.5 : 1);
+      });
+    });
+
+    const tip = document.createElement('div');
+    tip.className = 'wz-tip'; tip.hidden = true; el.appendChild(tip);
+    const hl = svg.append('rect').attr('x', 0).attr('width', W).attr('height', rowH).attr('fill', 'var(--color-fg)').attr('opacity', 0).attr('pointer-events', 'none');
+    const f3 = d3.format('.3f');
+    svg.append('g').selectAll('rect').data(groups).join('rect')
+      .attr('x', 0).attr('width', W).attr('y', (d, i) => top + i * rowH).attr('height', rowH).attr('fill', 'transparent')
+      .on('pointermove', (ev, d) => {
+        const i = groups.indexOf(d);
+        hl.attr('y', top + i * rowH).attr('opacity', 0.05);
+        tip.replaceChildren();
+        const h = document.createElement('div'); h.className = 'wz-tip-h'; h.textContent = `${d.program} · ${d.lang} ${d.level} ÷ O3`; tip.appendChild(h);
+        MACH.forEach((m, j) => {
+          const r = d.by[m]; if (!r) return;
+          const line = document.createElement('div'); line.className = 'wz-tip-r';
+          const sw = document.createElement('i'); sw.className = 'wz-sw'; sw.style.background = dash.colors[j];
+          const tx = document.createElement('span');
+          tx.textContent = `${m} ${f3(r.ratio)} [${f3(r.lo)}–${f3(r.hi)}] ${r.verdict === 'win' ? 'small wins' : r.verdict === 'loss' ? 'O3 wins' : 'tie'}${r.cpu != null && m === 'x86' ? ` · CPU ${f3(r.cpu)}` : ''} · ${r.pairs} pairs`;
+          line.append(sw, tx); tip.appendChild(line);
+        });
+        tip.hidden = false;
+        const [px, py] = d3.pointer(ev, el);
+        const tw = tip.offsetWidth, th = tip.offsetHeight, ew = el.clientWidth;
+        let tx = px + 14; if (tx + tw > ew) tx = px - tw - 14; if (tx < 0) tx = Math.max(0, ew - tw);
+        tip.style.left = tx + 'px';
+        tip.style.top = Math.max(0, Math.min(py - th / 2, el.clientHeight - th)) + 'px';
+      })
+      .on('pointerleave', () => { tip.hidden = true; hl.attr('opacity', 0); });
+    el.style.minHeight = H + 'px';
+  });
+</script>

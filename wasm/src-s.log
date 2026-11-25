@@ -1,0 +1,220 @@
+
+binarytrees: n=18; 10 samples after 3 warmups; ports: c, cpp, rust, swift
+  C                 build ok
+    base 180.4 ms  wasm 23204 B, gzip 11130 B  result 3963415002
+    O3   202.4 ms  wasm 20591 B, gzip 10545 B  result 3963415002
+    Os   187.3 ms  wasm 20568 B, gzip 10552 B  result 3963415002
+    Oz   187.1 ms  wasm 20564 B, gzip 10545 B  result 3963415002
+  C++               build ok
+    base 264.9 ms  wasm 25296 B, gzip 12614 B  result 3963415002
+    O3   309.1 ms  wasm 22232 B, gzip 11923 B  result 3963415002
+    Os   281.2 ms  wasm 22159 B, gzip 11915 B  result 3963415002
+    Oz   281.0 ms  wasm 22157 B, gzip 11909 B  result 3963415002
+  Rust              build ok
+    base 222.5 ms  wasm 21348 B, gzip 9824 B  result 3963415002
+    O3   231.8 ms  wasm 16011 B, gzip 7748 B  result 3963415002
+    Os   234.8 ms  wasm 16002 B, gzip 7743 B  result 3963415002
+    Oz   234.2 ms  wasm 16002 B, gzip 7752 B  result 3963415002
+  Swift             build ok
+    base 1795.0 ms  wasm 5558389 B, gzip 1701805 B  result 3963415002
+    O3   2026.4 ms  wasm 3439242 B, gzip 1318783 B  result 3963415002
+    Os   1745.2 ms  wasm 3441694 B, gzip 1323456 B  result 3963415002
+    Oz   1761.5 ms  wasm 3355740 B, gzip 1314099 B  result 3963415002
+
+fannkuchredux: n=10; 10 samples after 3 warmups; ports: c, cpp, rust, swift
+  C                 build ok
+    base 81.4 ms  wasm 14837 B, gzip 7848 B  result 1161472954
+    O3   82.6 ms  wasm 13367 B, gzip 7491 B  result 1161472954
+    Os   82.5 ms  wasm 13351 B, gzip 7484 B  result 1161472954
+    Oz   82.6 ms  wasm 13351 B, gzip 7485 B  result 1161472954
+  C++               build ok
+    base 102.9 ms  wasm 15751 B, gzip 8160 B  result 1161472954
+    O3   102.0 ms  wasm 13936 B, gzip 7786 B  result 1161472954
+    Os   102.0 ms  wasm 13920 B, gzip 7762 B  result 1161472954
+    Oz   101.9 ms  wasm 13920 B, gzip 7770 B  result 1161472954
+  Rust              build ok
+    base 126.6 ms  wasm 19982 B, gzip 9296 B  result 1161472954
+    O3   130.0 ms  wasm 15493 B, gzip 7488 B  result 1161472954
+    Os   130.0 ms  wasm 15497 B, gzip 7484 B  result 1161472954
+    Oz   130.0 ms  wasm 15497 B, gzip 7487 B  result 1161472954
+  Swift             build ok
+    base 145.0 ms  wasm 5554332 B, gzip 1699626 B  result 1161472954
+    O3   142.6 ms  wasm 3435677 B, gzip 1317804 B  result 1161472954
+    Os   141.8 ms  wasm 3438054 B, gzip 1321566 B  result 1161472954
+    Oz   156.9 ms  wasm 3352108 B, gzip 1313494 B  result 1161472954
+
+fasta: n=2500000; 10 samples after 3 warmups; ports: c, cpp, rust, swift
+  C                 build ok
+    base 100.0 ms  wasm 13343 B, gzip 6311 B  result 3173702343
+    O3   100.0 ms  wasm 12305 B, gzip 6084 B  result 3173702343
+    Os   99.8 ms  wasm 12304 B, gzip 6085 B  result 3173702343
+    Oz   99.8 ms  wasm 12300 B, gzip 6086 B  result 3173702343
+  C++               build ok
+    base 120.4 ms  wasm 29314 B, gzip 14548 B  result 3173702343
+    O3   120.4 ms  wasm 25427 B, gzip 13581 B  result 3173702343
+    Os   120.4 ms  wasm 25353 B, gzip 13570 B  result 3173702343
+    Oz   120.5 ms  wasm 25351 B, gzip 13570 B  result 3173702343
+  Rust              build ok
+    base 119.8 ms  wasm 13982 B, gzip 7021 B  result 3173702343
+    O3   119.8 ms  wasm 10267 B, gzip 5267 B  result 3173702343
+    Os   119.8 ms  wasm 10264 B, gzip 5274 B  result 3173702343
+    Oz   119.8 ms  wasm 10232 B, gzip 5283 B  result 3173702343
+  Swift             build ok
+    base 299.0 ms  wasm 5557164 B, gzip 1700616 B  result 3173702343
+    O3   297.5 ms  wasm 3437545 B, gzip 1318771 B  result 3173702343
+    Os   297.2 ms  wasm 3439807 B, gzip 1322544 B  result 3173702343
+    Oz   297.0 ms  wasm 3353878 B, gzip 1314076 B  result 3173702343
+
+knucleotide: n=500000, setup(500000); 10 samples after 3 warmups; ports: c, cpp, rust, swift
+  C                 build ok
+    base 132.4 ms  wasm 32132 B, gzip 14780 B  result 1583578344
+    O3   134.1 ms  wasm 28402 B, gzip 14071 B  result 1583578344
+    Os   133.4 ms  wasm 28343 B, gzip 14079 B  result 1583578344
+    Oz   132.2 ms  wasm 28341 B, gzip 14074 B  result 1583578344
+  C++               build ok
+    base 70.6 ms  wasm 210240 B, gzip 66112 B  result 1583578344
+    O3   78.0 ms  wasm 174820 B, gzip 63723 B  result 1583578344
+    Os   78.0 ms  wasm 165673 B, gzip 62109 B  result 1583578344
+    Oz   78.6 ms  wasm 165041 B, gzip 62989 B  result 1583578344
+  Rust              build ok
+    base 100.3 ms  wasm 66748 B, gzip 26885 B  result 1583578344
+    O3   101.6 ms  wasm 53837 B, gzip 24040 B  result 1583578344
+    Os   102.8 ms  wasm 53840 B, gzip 24025 B  result 1583578344
+    Oz   103.1 ms  wasm 53778 B, gzip 23970 B  result 1583578344
+  Swift             build ok
+    base 496.6 ms  wasm 5569798 B, gzip 1707636 B  result 1583578344
+    O3   496.9 ms  wasm 3449495 B, gzip 1321400 B  result 1583578344
+    Os   483.4 ms  wasm 3451581 B, gzip 1330089 B  result 1583578344
+    Oz   502.2 ms  wasm 3365675 B, gzip 1319335 B  result 1583578344
+
+mandelbrot: n=3200; 10 samples after 3 warmups; ports: c, cpp, rust, swift
+  C                 build ok
+    base 216.4 ms  wasm 19408 B, gzip 9017 B  result 3411461379
+    O3   215.8 ms  wasm 17315 B, gzip 8543 B  result 3411461379
+    Os   215.2 ms  wasm 17302 B, gzip 8570 B  result 3411461379
+    Oz   214.4 ms  wasm 17296 B, gzip 8553 B  result 3411461379
+  C++               build ok
+    base 261.6 ms  wasm 34783 B, gzip 16466 B  result 3411461379
+    O3   263.8 ms  wasm 30327 B, gzip 15360 B  result 3411461379
+    Os   263.2 ms  wasm 30251 B, gzip 15340 B  result 3411461379
+    Oz   262.8 ms  wasm 30247 B, gzip 15343 B  result 3411461379
+  Rust              build ok
+    base 191.6 ms  wasm 20220 B, gzip 9525 B  result 3411461379
+    O3   190.9 ms  wasm 15700 B, gzip 7714 B  result 3411461379
+    Os   197.7 ms  wasm 15680 B, gzip 7750 B  result 3411461379
+    Oz   197.8 ms  wasm 15680 B, gzip 7716 B  result 3411461379
+  Swift             build ok
+    base 222.9 ms  wasm 5554249 B, gzip 1699787 B  result 3411461379
+    O3   222.8 ms  wasm 3435450 B, gzip 1317829 B  result 3411461379
+    Os   224.0 ms  wasm 3437864 B, gzip 1321409 B  result 3411461379
+    Oz   225.2 ms  wasm 3351920 B, gzip 1313221 B  result 3411461379
+
+nbody: n=2000000; 10 samples after 3 warmups; ports: c, cpp, rust, swift
+  C                 build ok
+    base 149.8 ms  wasm 17195 B, gzip 8693 B  result 1845223486
+    O3   150.2 ms  wasm 15770 B, gzip 8343 B  result 1845223486
+    Os   150.1 ms  wasm 15406 B, gzip 8361 B  result 1845223486
+    Oz   149.5 ms  wasm 15754 B, gzip 8339 B  result 1845223486
+  C++               build ok
+    base 79.3 ms  wasm 20239 B, gzip 9854 B  result 1845223486
+    O3   79.3 ms  wasm 19218 B, gzip 9371 B  result 1845223486
+    Os   79.2 ms  wasm 19202 B, gzip 9367 B  result 1845223486
+    Oz   79.2 ms  wasm 19202 B, gzip 9367 B  result 1845223486
+  Rust              build ok
+    base 155.2 ms  wasm 42266 B, gzip 19078 B  result 1845223486
+    O3   154.3 ms  wasm 34575 B, gzip 16343 B  result 1845223486
+    Os   154.0 ms  wasm 34228 B, gzip 16341 B  result 1845223486
+    Oz   154.4 ms  wasm 34514 B, gzip 16337 B  result 1845223486
+  Swift             build ok
+    base 128.0 ms  wasm 5555319 B, gzip 1700251 B  result 1845223486
+    O3   128.5 ms  wasm 3437495 B, gzip 1318661 B  result 1845223486
+    Os   131.4 ms  wasm 3439631 B, gzip 1322757 B  result 1845223486
+    Oz   131.1 ms  wasm 3353755 B, gzip 1313657 B  result 1845223486
+
+pidigits: n=2000; 10 samples after 3 warmups; ports: c, cpp, rust, swift
+  C                 build ok
+    base 134.1 ms  wasm 37004 B, gzip 17187 B  result 3349707335
+    O3   135.6 ms  wasm 31997 B, gzip 16338 B  result 3349707335
+    Os   135.3 ms  wasm 31974 B, gzip 16427 B  result 3349707335
+    Oz   135.4 ms  wasm 31999 B, gzip 16446 B  result 3349707335
+  C++               build ok
+    base 114.5 ms  wasm 38308 B, gzip 17786 B  result 3349707335
+    O3   114.8 ms  wasm 33096 B, gzip 16786 B  result 3349707335
+    Os   114.5 ms  wasm 32651 B, gzip 16812 B  result 3349707335
+    Oz   114.5 ms  wasm 32641 B, gzip 16805 B  result 3349707335
+  Rust              build ok
+    base 305.6 ms  wasm 73400 B, gzip 26662 B  result 3349707335
+    O3   301.5 ms  wasm 58606 B, gzip 22707 B  result 3349707335
+    Os   311.7 ms  wasm 58413 B, gzip 22779 B  result 3349707335
+    Oz   307.4 ms  wasm 58368 B, gzip 22745 B  result 3349707335
+  Swift             build BUILD FAILED swift build: /Users/robertmorelli/Documents/personal-repos/utu/.tmp/bg-src-s/pidigits/swift-src/Sources/gmp/mini-gmp.c:2:10: fatal error: '../../../c/mini-gmp.c' file not found
+  Swift: build: swift build: /Users/robertmorelli/Documents/personal-repos/utu/.tmp/bg-src-s/pidigits/swift-src/Sources/gmp/mini-gmp.c:2:10: fatal error: '../../../c/mini-gmp.c' file not found
+  Swift: build: swift build: /Users/robertmorelli/Documents/personal-repos/utu/.tmp/bg-src-s/pidigits/swift-src/Sources/gmp/mini-gmp.c:2:10: fatal error: '../../../c/mini-gmp.c' file not found
+  Swift: build: swift build: /Users/robertmorelli/Documents/personal-repos/utu/.tmp/bg-src-s/pidigits/swift-src/Sources/gmp/mini-gmp.c:2:10: fatal error: '../../../c/mini-gmp.c' file not found
+  Swift: build: swift build: /Users/robertmorelli/Documents/personal-repos/utu/.tmp/bg-src-s/pidigits/swift-src/Sources/gmp/mini-gmp.c:2:10: fatal error: '../../../c/mini-gmp.c' file not found
+
+regexredux: n=500000, setup(500000); 10 samples after 3 warmups; ports: c, cpp, rust, swift
+  C                 build ok
+    base 1333.2 ms  wasm 115063 B, gzip 48504 B  result 3755826591
+    O3   1295.5 ms  wasm 106171 B, gzip 47212 B  result 3755826591
+    Os   1271.4 ms  wasm 105930 B, gzip 47243 B  result 3755826591
+    Oz   1274.4 ms  wasm 105932 B, gzip 47256 B  result 3755826591
+  C++               build ok
+    base 1312.0 ms  wasm 279303 B, gzip 102256 B  result 3755826591
+    O3   1273.2 ms  wasm 244881 B, gzip 98300 B  result 3755826591
+    Os   1265.3 ms  wasm 235712 B, gzip 97303 B  result 3755826591
+    Oz   1278.5 ms  wasm 235113 B, gzip 97518 B  result 3755826591
+  Rust              build ok
+    base 236.2 ms  wasm 1017059 B, gzip 343946 B  result 3755826591
+    O3   237.0 ms  wasm 834351 B, gzip 310458 B  result 3755826591
+    Os   242.0 ms  wasm 834020 B, gzip 310759 B  result 3755826591
+    Oz   238.2 ms  wasm 826101 B, gzip 310654 B  result 3755826591
+  Swift             build ok
+    base 1919.0 ms  wasm 53791493 B, gzip 19968851 B  result 3755826591
+    O3   1982.0 ms  wasm 46345915 B, gzip 19187480 B  result 3755826591
+    Os   1991.0 ms  wasm 46098473 B, gzip 19157386 B  result 3755826591
+    Oz   1860.5 ms  wasm 45811033 B, gzip 19139916 B  result 3755826591
+
+revcomp: n=5000000, setup(5000000); 10 samples after 3 warmups; ports: c, cpp, rust, swift
+  C                 build ok
+    base 78.2 ms  wasm 18211 B, gzip 8051 B  result 2124125449
+    O3   78.5 ms  wasm 16673 B, gzip 7905 B  result 2124125449
+    Os   78.8 ms  wasm 16669 B, gzip 7920 B  result 2124125449
+    Oz   79.2 ms  wasm 16665 B, gzip 7910 B  result 2124125449
+  C++               build ok
+    base 194.7 ms  wasm 176088 B, gzip 61057 B  result 2124125449
+    O3   195.9 ms  wasm 150085 B, gzip 58409 B  result 2124125449
+    Os   195.7 ms  wasm 140933 B, gzip 57331 B  result 2124125449
+    Oz   195.8 ms  wasm 140576 B, gzip 57514 B  result 2124125449
+  Rust              build ok
+    base 71.9 ms  wasm 37938 B, gzip 18440 B  result 2124125449
+    O3   72.7 ms  wasm 21598 B, gzip 11415 B  result 2124125449
+    Os   71.8 ms  wasm 21439 B, gzip 11432 B  result 2124125449
+    Oz   72.5 ms  wasm 21583 B, gzip 11411 B  result 2124125449
+  Swift             build ok
+    base 117.0 ms  wasm 5564126 B, gzip 1704164 B  result 2124125449
+    O3   117.2 ms  wasm 3447442 B, gzip 1320025 B  result 2124125449
+    Os   118.5 ms  wasm 3448810 B, gzip 1327597 B  result 2124125449
+    Oz   118.5 ms  wasm 3362878 B, gzip 1317743 B  result 2124125449
+
+spectralnorm: n=2000; 10 samples after 3 warmups; ports: c, cpp, rust, swift
+  C                 build ok
+    base 74.2 ms  wasm 25711 B, gzip 11826 B  result 2982777735
+    O3   74.1 ms  wasm 23128 B, gzip 11316 B  result 2982777735
+    Os   74.2 ms  wasm 23091 B, gzip 11316 B  result 2982777735
+    Oz   74.1 ms  wasm 23101 B, gzip 11311 B  result 2982777735
+  C++               build ok
+    base 148.8 ms  wasm 14669 B, gzip 7617 B  result 2982777735
+    O3   147.8 ms  wasm 12916 B, gzip 7323 B  result 2982777735
+    Os   147.5 ms  wasm 12900 B, gzip 7318 B  result 2982777735
+    Oz   147.4 ms  wasm 12900 B, gzip 7320 B  result 2982777735
+  Rust              build ok
+    base 52.2 ms  wasm 39922 B, gzip 18239 B  result 2982777735
+    O3   52.2 ms  wasm 31777 B, gzip 15462 B  result 2982777735
+    Os   52.2 ms  wasm 31776 B, gzip 15440 B  result 2982777735
+    Oz   52.2 ms  wasm 31714 B, gzip 15462 B  result 2982777735
+  Swift             build ok
+    base 241.3 ms  wasm 5557819 B, gzip 1701352 B  result 2982777735
+    O3   241.2 ms  wasm 3437870 B, gzip 1319887 B  result 2982777735
+    Os   241.2 ms  wasm 3440357 B, gzip 1323490 B  result 2982777735
+    Oz   241.4 ms  wasm 3354413 B, gzip 1315703 B  result 2982777735

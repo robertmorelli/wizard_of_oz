@@ -1,0 +1,170 @@
+
+binarytrees: n=18; 10 samples after 3 warmups; ports: c, cpp, rust
+  C                 build ok
+    base 178.3 ms  wasm 23127 B, gzip 11143 B  result 3963415002
+    O3   187.6 ms  wasm 20512 B, gzip 10588 B  result 3963415002
+    Os   155.2 ms  wasm 20489 B, gzip 10582 B  result 3963415002
+    Oz   155.2 ms  wasm 20485 B, gzip 10580 B  result 3963415002
+  C++               build ok
+    base 284.0 ms  wasm 25301 B, gzip 12686 B  result 3963415002
+    O3   316.8 ms  wasm 22093 B, gzip 11967 B  result 3963415002
+    Os   326.5 ms  wasm 22025 B, gzip 11949 B  result 3963415002
+    Oz   308.4 ms  wasm 22021 B, gzip 11950 B  result 3963415002
+  Rust              build ok
+    base 229.9 ms  wasm 21784 B, gzip 10188 B  result 3963415002
+    O3   229.7 ms  wasm 16014 B, gzip 7872 B  result 3963415002
+    Os   232.4 ms  wasm 15994 B, gzip 7877 B  result 3963415002
+    Oz   231.8 ms  wasm 15992 B, gzip 7883 B  result 3963415002
+
+fannkuchredux: n=10; 10 samples after 3 warmups; ports: c, cpp, rust
+  C                 build ok
+    base 79.7 ms  wasm 14913 B, gzip 7841 B  result 1161472954
+    O3   81.6 ms  wasm 13400 B, gzip 7480 B  result 1161472954
+    Os   81.6 ms  wasm 13384 B, gzip 7469 B  result 1161472954
+    Oz   81.7 ms  wasm 13384 B, gzip 7471 B  result 1161472954
+  C++               build ok
+    base 101.0 ms  wasm 15794 B, gzip 8159 B  result 1161472954
+    O3   101.2 ms  wasm 13899 B, gzip 7760 B  result 1161472954
+    Os   101.3 ms  wasm 13883 B, gzip 7753 B  result 1161472954
+    Oz   101.4 ms  wasm 13883 B, gzip 7754 B  result 1161472954
+  Rust              build ok
+    base 134.7 ms  wasm 20174 B, gzip 9413 B  result 1161472954
+    O3   134.7 ms  wasm 15466 B, gzip 7462 B  result 1161472954
+    Os   135.4 ms  wasm 15481 B, gzip 7473 B  result 1161472954
+    Oz   135.4 ms  wasm 15481 B, gzip 7474 B  result 1161472954
+
+fasta: n=2500000; 10 samples after 3 warmups; ports: c, cpp, rust
+  C                 build ok
+    base 99.9 ms  wasm 13300 B, gzip 6339 B  result 3173702343
+    O3   100.0 ms  wasm 12216 B, gzip 6118 B  result 3173702343
+    Os   99.9 ms  wasm 12213 B, gzip 6120 B  result 3173702343
+    Oz   99.7 ms  wasm 12209 B, gzip 6116 B  result 3173702343
+  C++               build ok
+    base 157.6 ms  wasm 29528 B, gzip 14570 B  result 3173702343
+    O3   156.5 ms  wasm 25341 B, gzip 13649 B  result 3173702343
+    Os   156.6 ms  wasm 25267 B, gzip 13628 B  result 3173702343
+    Oz   156.6 ms  wasm 25265 B, gzip 13627 B  result 3173702343
+  Rust              build ok
+    base 122.4 ms  wasm 14404 B, gzip 7237 B  result 3173702343
+    O3   122.2 ms  wasm 10122 B, gzip 5350 B  result 3173702343
+    Os   122.4 ms  wasm 10128 B, gzip 5359 B  result 3173702343
+    Oz   122.2 ms  wasm 10128 B, gzip 5359 B  result 3173702343
+
+knucleotide: n=500000, setup(500000); 10 samples after 3 warmups; ports: c, cpp, rust
+  C                 build ok
+    base 131.8 ms  wasm 32139 B, gzip 14795 B  result 1583578344
+    O3   132.7 ms  wasm 28419 B, gzip 14110 B  result 1583578344
+    Os   131.1 ms  wasm 28365 B, gzip 14102 B  result 1583578344
+    Oz   130.9 ms  wasm 28357 B, gzip 14113 B  result 1583578344
+  C++               build ok
+    base 88.4 ms  wasm 209813 B, gzip 66825 B  result 1583578344
+    O3   115.6 ms  wasm 171235 B, gzip 62638 B  result 1583578344
+    Os   112.4 ms  wasm 162224 B, gzip 61765 B  result 1583578344
+    Oz   112.1 ms  wasm 161229 B, gzip 61935 B  result 1583578344
+  Rust              build ok
+    base 141.1 ms  wasm 66021 B, gzip 27358 B  result 1583578344
+    O3   152.2 ms  wasm 50072 B, gzip 23076 B  result 1583578344
+    Os   153.3 ms  wasm 50084 B, gzip 23053 B  result 1583578344
+    Oz   146.0 ms  wasm 49970 B, gzip 23198 B  result 1583578344
+
+mandelbrot: n=3200; 10 samples after 3 warmups; ports: c, cpp, rust
+  C                 build ok
+    base 215.2 ms  wasm 19293 B, gzip 9045 B  result 3411461379
+    O3   216.0 ms  wasm 17162 B, gzip 8580 B  result 3411461379
+    Os   215.7 ms  wasm 17147 B, gzip 8588 B  result 3411461379
+    Oz   215.6 ms  wasm 17143 B, gzip 8585 B  result 3411461379
+  C++               build ok
+    base 205.8 ms  wasm 34810 B, gzip 16700 B  result 3411461379
+    O3   275.5 ms  wasm 30066 B, gzip 15528 B  result 3411461379
+    Os   275.4 ms  wasm 29990 B, gzip 15520 B  result 3411461379
+    Oz   274.9 ms  wasm 29986 B, gzip 15520 B  result 3411461379
+  Rust              build ok
+    base 337.1 ms  wasm 21546 B, gzip 9941 B  result 3411461379
+    O3   332.1 ms  wasm 16145 B, gzip 7720 B  result 3411461379
+    Os   334.7 ms  wasm 16141 B, gzip 7736 B  result 3411461379
+    Oz   334.8 ms  wasm 16141 B, gzip 7737 B  result 3411461379
+
+nbody: n=2000000; 10 samples after 3 warmups; ports: c, cpp, rust
+  C                 build ok
+    base 149.5 ms  wasm 16614 B, gzip 8543 B  result 1845223486
+    O3   150.0 ms  wasm 15115 B, gzip 8218 B  result 1845223486
+    Os   150.2 ms  wasm 14811 B, gzip 8219 B  result 1845223486
+    Oz   150.1 ms  wasm 15099 B, gzip 8219 B  result 1845223486
+  C++               build ok
+    base 141.0 ms  wasm 19606 B, gzip 9171 B  result 1845223486
+    O3   120.5 ms  wasm 17644 B, gzip 8681 B  result 1845223486
+    Os   119.0 ms  wasm 17586 B, gzip 8673 B  result 1845223486
+    Oz   119.5 ms  wasm 17628 B, gzip 8676 B  result 1845223486
+  Rust              build ok
+    base 155.7 ms  wasm 42551 B, gzip 19278 B  result 1845223486
+    O3   153.7 ms  wasm 34674 B, gzip 16465 B  result 1845223486
+    Os   153.6 ms  wasm 34345 B, gzip 16479 B  result 1845223486
+    Oz   153.8 ms  wasm 34613 B, gzip 16471 B  result 1845223486
+
+pidigits: n=2000; 10 samples after 3 warmups; ports: c, cpp, rust
+  C                 build ok
+    base 134.1 ms  wasm 36715 B, gzip 17048 B  result 3349707335
+    O3   135.6 ms  wasm 31726 B, gzip 16261 B  result 3349707335
+    Os   135.4 ms  wasm 31627 B, gzip 16319 B  result 3349707335
+    Oz   135.7 ms  wasm 31666 B, gzip 16347 B  result 3349707335
+  C++               build ok
+    base 114.8 ms  wasm 38040 B, gzip 17709 B  result 3349707335
+    O3   114.9 ms  wasm 32719 B, gzip 16727 B  result 3349707335
+    Os   114.6 ms  wasm 32314 B, gzip 16721 B  result 3349707335
+    Oz   114.6 ms  wasm 32312 B, gzip 16736 B  result 3349707335
+  Rust              build ok
+    base 346.0 ms  wasm 60166 B, gzip 23060 B  result 3349707335
+    O3   335.1 ms  wasm 41162 B, gzip 17544 B  result 3349707335
+    Os   335.2 ms  wasm 41169 B, gzip 17558 B  result 3349707335
+    Oz   336.6 ms  wasm 41063 B, gzip 17594 B  result 3349707335
+
+regexredux: n=500000, setup(500000); 10 samples after 3 warmups; ports: c, cpp, rust
+  C                 build ok
+    base 1327.5 ms  wasm 112862 B, gzip 47599 B  result 3755826591
+    O3   1237.9 ms  wasm 103875 B, gzip 46251 B  result 3755826591
+    Os   1239.8 ms  wasm 103640 B, gzip 46275 B  result 3755826591
+    Oz   1236.6 ms  wasm 103609 B, gzip 46311 B  result 3755826591
+  C++               build ok
+    base 1325.8 ms  wasm 278072 B, gzip 101403 B  result 3755826591
+    O3   1281.4 ms  wasm 241437 B, gzip 96728 B  result 3755826591
+    Os   1241.5 ms  wasm 232351 B, gzip 95808 B  result 3755826591
+    Oz   1240.0 ms  wasm 231800 B, gzip 95955 B  result 3755826591
+  Rust              build ok
+    base 258.3 ms  wasm 1014039 B, gzip 343581 B  result 3755826591
+    O3   256.9 ms  wasm 799443 B, gzip 302114 B  result 3755826591
+    Os   262.2 ms  wasm 797776 B, gzip 302283 B  result 3755826591
+    Oz   259.2 ms  wasm 790238 B, gzip 302062 B  result 3755826591
+
+revcomp: n=5000000, setup(5000000); 10 samples after 3 warmups; ports: c, cpp, rust
+  C                 build ok
+    base 78.5 ms  wasm 18153 B, gzip 8021 B  result 2124125449
+    O3   78.2 ms  wasm 16636 B, gzip 7871 B  result 2124125449
+    Os   78.4 ms  wasm 16630 B, gzip 7875 B  result 2124125449
+    Oz   78.3 ms  wasm 16626 B, gzip 7870 B  result 2124125449
+  C++               build ok
+    base 193.0 ms  wasm 176714 B, gzip 61214 B  result 2124125449
+    O3   200.4 ms  wasm 149708 B, gzip 58478 B  result 2124125449
+    Os   193.8 ms  wasm 140530 B, gzip 57377 B  result 2124125449
+    Oz   193.6 ms  wasm 140077 B, gzip 57592 B  result 2124125449
+  Rust              build ok
+    base 78.0 ms  wasm 40211 B, gzip 19351 B  result 2124125449
+    O3   78.6 ms  wasm 21681 B, gzip 11816 B  result 2124125449
+    Os   75.0 ms  wasm 21661 B, gzip 11834 B  result 2124125449
+    Oz   75.3 ms  wasm 21673 B, gzip 11823 B  result 2124125449
+
+spectralnorm: n=2000; 10 samples after 3 warmups; ports: c, cpp, rust
+  C                 build ok
+    base 72.9 ms  wasm 25673 B, gzip 11805 B  result 2982777735
+    O3   72.8 ms  wasm 23096 B, gzip 11252 B  result 2982777735
+    Os   72.8 ms  wasm 23073 B, gzip 11252 B  result 2982777735
+    Oz   73.0 ms  wasm 23069 B, gzip 11253 B  result 2982777735
+  C++               build ok
+    base 147.3 ms  wasm 14667 B, gzip 7647 B  result 2982777735
+    O3   147.2 ms  wasm 12913 B, gzip 7346 B  result 2982777735
+    Os   147.3 ms  wasm 12897 B, gzip 7336 B  result 2982777735
+    Oz   147.4 ms  wasm 12897 B, gzip 7339 B  result 2982777735
+  Rust              build ok
+    base 144.3 ms  wasm 40627 B, gzip 18532 B  result 2982777735
+    O3   206.8 ms  wasm 31870 B, gzip 15488 B  result 2982777735
+    Os   190.3 ms  wasm 31869 B, gzip 15462 B  result 2982777735
+    Oz   145.4 ms  wasm 31807 B, gzip 15488 B  result 2982777735

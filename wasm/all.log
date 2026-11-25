@@ -1,0 +1,688 @@
+
+binarytrees: n=18; 10 samples after 3 warmups; ports: utu-fast, utu-fastUnsafe, utu-small, utu-smallUnsafe, c, cpp, rust, go, swift, haskell, dart, js, kotlin, moonbit, assemblyscript
+  utu fast          build ok
+    base 299.7 ms  wasm 2592 B, gzip 1115 B  result 3963415002
+    O3   298.2 ms  wasm 2221 B, gzip 1088 B  result 3963415002
+    Oz   298.0 ms  wasm 2221 B, gzip 1088 B  result 3963415002
+  utu fastUnsafe    build ok
+    base 297.0 ms  wasm 2568 B, gzip 969 B  result 3963415002
+    O3   298.6 ms  wasm 2197 B, gzip 945 B  result 3963415002
+    Oz   300.3 ms  wasm 2197 B, gzip 945 B  result 3963415002
+  utu small         build ok
+    base 316.9 ms  wasm 721 B, gzip 869 B  result 3963415002
+    O3   318.9 ms  wasm 688 B, gzip 854 B  result 3963415002
+    Oz   316.6 ms  wasm 673 B, gzip 859 B  result 3963415002
+  utu smallUnsafe   build ok
+    base 318.9 ms  wasm 715 B, gzip 726 B  result 3963415002
+    O3   320.4 ms  wasm 682 B, gzip 710 B  result 3963415002
+    Oz   317.1 ms  wasm 667 B, gzip 714 B  result 3963415002
+  C                 build ok
+    base 317.6 ms  wasm 17327 B, gzip 8807 B  result 3963415002
+    O3   318.5 ms  wasm 17281 B, gzip 8695 B  result 3963415002
+    Oz   319.8 ms  wasm 17253 B, gzip 8691 B  result 3963415002
+  C++               build ok
+    base 413.6 ms  wasm 18953 B, gzip 10042 B  result 3963415002
+    O3   413.7 ms  wasm 18891 B, gzip 10068 B  result 3963415002
+    Oz   413.3 ms  wasm 18861 B, gzip 10066 B  result 3963415002
+  Rust              build ok
+    base 305.9 ms  wasm 23010 B, gzip 10559 B  result 3963415002
+    O3   289.6 ms  wasm 17636 B, gzip 8416 B  result 3963415002
+    Oz   291.8 ms  wasm 17628 B, gzip 8419 B  result 3963415002
+  Go                build ok
+    base 8476.3 ms  wasm 2428653 B, gzip 708582 B  result 3963415002
+    O3   8856.0 ms  wasm 2309233 B, gzip 704306 B  result 3963415002
+    Oz   8525.5 ms  wasm 2292894 B, gzip 704453 B  result 3963415002
+  Swift             build ok
+    base 2312.0 ms  wasm 5559335 B, gzip 1702484 B  result 3963415002
+    O3   2631.6 ms  wasm 3440024 B, gzip 1319046 B  result 3963415002
+    Oz   2264.5 ms  wasm 3356593 B, gzip 1314533 B  result 3963415002
+  Haskell           build ok
+    base 2373.1 ms  wasm 1767396 B, gzip 479109 B  result 3963415002
+    O3   2410.7 ms  wasm 1209951 B, gzip 454942 B  result 3963415002
+    Oz   2378.7 ms  wasm 1047399 B, gzip 452525 B  result 3963415002
+  Dart              build ok
+    base 303.9 ms  wasm 37045 B, gzip 16571 B  result 3963415002
+    O3   303.7 ms  wasm 36984 B, gzip 16467 B  result 3963415002
+    Oz   302.4 ms  wasm 36358 B, gzip 16638 B  result 3963415002
+  JavaScript        build ok
+    base 716.8 ms  wasm 0 B, gzip 467 B  result 3963415002
+    O3   no wasm (skipped)
+    Oz   no wasm (skipped)
+  Kotlin            build ok
+    base 284.9 ms  wasm 2838 B, gzip 3837 B  result 3963415002
+    O3   283.5 ms  wasm 3513 B, gzip 3994 B  result 3963415002
+    Oz   280.1 ms  wasm 2851 B, gzip 3847 B  result 3963415002
+  MoonBit           build ok
+    base 342.6 ms  wasm 4355 B, gzip 2483 B  result 3963415002
+    O3   383.3 ms  wasm 3662 B, gzip 1950 B  result 3963415002
+    Oz   332.4 ms  wasm 3192 B, gzip 1899 B  result 3963415002
+  AssemblyScript    build ok
+    base 351.8 ms  wasm 7433 B, gzip 3816 B  result 3963415002
+    O3   352.0 ms  wasm 7431 B, gzip 3800 B  result 3963415002
+    Oz   352.1 ms  wasm 7414 B, gzip 3796 B  result 3963415002
+  JavaScript: no wasm
+  JavaScript: no wasm
+
+fannkuchredux: n=10; 10 samples after 3 warmups; ports: utu-fast, utu-fastUnsafe, utu-small, utu-smallUnsafe, utu-tuned-fast, utu-tuned-small, c, cpp, rust, go, swift, haskell, dart, js, kotlin, moonbit, assemblyscript
+  utu fast          build ok
+    base 186.2 ms  wasm 2331 B, gzip 1259 B  result 1161472954
+    O3   185.8 ms  wasm 2054 B, gzip 1266 B  result 1161472954
+    Oz   186.0 ms  wasm 2054 B, gzip 1266 B  result 1161472954
+  utu fastUnsafe    build ok
+    base 186.1 ms  wasm 2331 B, gzip 1117 B  result 1161472954
+    O3   185.9 ms  wasm 2054 B, gzip 1124 B  result 1161472954
+    Oz   185.8 ms  wasm 2054 B, gzip 1124 B  result 1161472954
+  utu small         build ok
+    base 187.9 ms  wasm 1318 B, gzip 1161 B  result 1161472954
+    O3   185.5 ms  wasm 1198 B, gzip 1123 B  result 1161472954
+    Oz   185.8 ms  wasm 1193 B, gzip 1128 B  result 1161472954
+  utu smallUnsafe   build ok
+    base 188.2 ms  wasm 1318 B, gzip 1019 B  result 1161472954
+    O3   185.5 ms  wasm 1198 B, gzip 981 B  result 1161472954
+    Oz   186.1 ms  wasm 1193 B, gzip 986 B  result 1161472954
+  utu tuned fast    build ok
+    base 114.3 ms  wasm 2979 B, gzip 1342 B  result 1161472954
+    O3   115.8 ms  wasm 2587 B, gzip 1331 B  result 1161472954
+    Oz   115.9 ms  wasm 2609 B, gzip 1366 B  result 1161472954
+  utu tuned small   build ok
+    base 114.2 ms  wasm 1346 B, gzip 1243 B  result 1161472954
+    O3   116.0 ms  wasm 1255 B, gzip 1150 B  result 1161472954
+    Oz   115.3 ms  wasm 1278 B, gzip 1191 B  result 1161472954
+  C                 build ok
+    base 110.7 ms  wasm 11236 B, gzip 6112 B  result 1161472954
+    O3   110.6 ms  wasm 11195 B, gzip 6125 B  result 1161472954
+    Oz   110.6 ms  wasm 11178 B, gzip 6123 B  result 1161472954
+  C++               build ok
+    base 135.0 ms  wasm 11753 B, gzip 6436 B  result 1161472954
+    O3   135.1 ms  wasm 11716 B, gzip 6425 B  result 1161472954
+    Oz   135.4 ms  wasm 11699 B, gzip 6425 B  result 1161472954
+  Rust              build ok
+    base 132.3 ms  wasm 22624 B, gzip 10115 B  result 1161472954
+    O3   131.8 ms  wasm 18124 B, gzip 8306 B  result 1161472954
+    Oz   132.8 ms  wasm 18128 B, gzip 8302 B  result 1161472954
+  Go                build ok
+    base 388.4 ms  wasm 2424097 B, gzip 707431 B  result 1161472954
+    O3   363.3 ms  wasm 2305016 B, gzip 703137 B  result 1161472954
+    Oz   365.3 ms  wasm 2288528 B, gzip 703412 B  result 1161472954
+  Swift             build ok
+    base 200.0 ms  wasm 5554414 B, gzip 1699629 B  result 1161472954
+    O3   198.9 ms  wasm 3435830 B, gzip 1317721 B  result 1161472954
+    Oz   199.3 ms  wasm 3352293 B, gzip 1313617 B  result 1161472954
+  Haskell           build ok
+    base 626.5 ms  wasm 1513547 B, gzip 437936 B  result 1161472954
+    O3   631.0 ms  wasm 1059593 B, gzip 418134 B  result 1161472954
+    Oz   634.0 ms  wasm 929342 B, gzip 416252 B  result 1161472954
+  Dart              build ok
+    base 196.7 ms  wasm 36997 B, gzip 17296 B  result 1161472954
+    O3   196.4 ms  wasm 36944 B, gzip 17171 B  result 1161472954
+    Oz   197.2 ms  wasm 36280 B, gzip 17344 B  result 1161472954
+  JavaScript        build ok
+    base 231.4 ms  wasm 0 B, gzip 714 B  result 1161472954
+    O3   no wasm (skipped)
+    Oz   no wasm (skipped)
+  Kotlin            build ok
+    base 202.8 ms  wasm 3074 B, gzip 3867 B  result 1161472954
+    O3   202.6 ms  wasm 3454 B, gzip 3960 B  result 1161472954
+    Oz   202.8 ms  wasm 3097 B, gzip 3869 B  result 1161472954
+  MoonBit           build ok
+    base 187.4 ms  wasm 4724 B, gzip 2714 B  result 1161472954
+    O3   188.0 ms  wasm 3832 B, gzip 2157 B  result 1161472954
+    Oz   185.6 ms  wasm 3577 B, gzip 2098 B  result 1161472954
+  AssemblyScript    build ok
+    base 104.2 ms  wasm 7834 B, gzip 4113 B  result 1161472954
+    O3   104.3 ms  wasm 7784 B, gzip 4046 B  result 1161472954
+    Oz   104.2 ms  wasm 7743 B, gzip 4040 B  result 1161472954
+  JavaScript: no wasm
+  JavaScript: no wasm
+
+fasta: n=2500000; 10 samples after 3 warmups; ports: utu-fast, utu-fastUnsafe, utu-small, utu-smallUnsafe, c, cpp, rust, go, swift, haskell, dart, js, kotlin, moonbit, assemblyscript
+  utu fast          build ok
+    base 140.3 ms  wasm 5429 B, gzip 1812 B  result 3173702343
+    O3   140.3 ms  wasm 4363 B, gzip 1896 B  result 3173702343
+    Oz   140.4 ms  wasm 4363 B, gzip 1896 B  result 3173702343
+  utu fastUnsafe    build ok
+    base 140.3 ms  wasm 4318 B, gzip 1563 B  result 3173702343
+    O3   140.7 ms  wasm 3721 B, gzip 1585 B  result 3173702343
+    Oz   140.5 ms  wasm 3721 B, gzip 1585 B  result 3173702343
+  utu small         build ok
+    base 140.4 ms  wasm 2225 B, gzip 1533 B  result 3173702343
+    O3   140.4 ms  wasm 2068 B, gzip 1543 B  result 3173702343
+    Oz   140.5 ms  wasm 2074 B, gzip 1554 B  result 3173702343
+  utu smallUnsafe   build ok
+    base 140.4 ms  wasm 1970 B, gzip 1318 B  result 3173702343
+    O3   140.4 ms  wasm 1877 B, gzip 1309 B  result 3173702343
+    Oz   140.5 ms  wasm 1883 B, gzip 1328 B  result 3173702343
+  C                 build ok
+    base 131.7 ms  wasm 10449 B, gzip 4964 B  result 3173702343
+    O3   131.7 ms  wasm 10443 B, gzip 4872 B  result 3173702343
+    Oz   131.6 ms  wasm 10432 B, gzip 4864 B  result 3173702343
+  C++               build ok
+    base 155.5 ms  wasm 13098 B, gzip 6156 B  result 3173702343
+    O3   155.5 ms  wasm 13072 B, gzip 6136 B  result 3173702343
+    Oz   155.3 ms  wasm 13058 B, gzip 6129 B  result 3173702343
+  Rust              build ok
+    base 157.7 ms  wasm 15504 B, gzip 7315 B  result 3173702343
+    O3   157.7 ms  wasm 11825 B, gzip 5716 B  result 3173702343
+    Oz   157.7 ms  wasm 11822 B, gzip 5716 B  result 3173702343
+  Go                build ok
+    base 551.9 ms  wasm 1908343 B, gzip 568294 B  result 3173702343
+    O3   518.0 ms  wasm 1814980 B, gzip 564612 B  result 3173702343
+    Oz   517.6 ms  wasm 1806700 B, gzip 564401 B  result 3173702343
+  Swift             build ok
+    base 347.1 ms  wasm 5556553 B, gzip 1700489 B  result 3173702343
+    O3   345.9 ms  wasm 3437203 B, gzip 1318542 B  result 3173702343
+    Oz   348.6 ms  wasm 3353529 B, gzip 1314043 B  result 3173702343
+  Haskell           build ok
+    base 734.2 ms  wasm 1620738 B, gzip 461230 B  result 3173702343
+    O3   764.3 ms  wasm 1132406 B, gzip 439276 B  result 3173702343
+    Oz   745.0 ms  wasm 989720 B, gzip 438263 B  result 3173702343
+  Dart              build ok
+    base 587.9 ms  wasm 38451 B, gzip 18426 B  result 3173702343
+    O3   569.5 ms  wasm 38437 B, gzip 18257 B  result 3173702343
+    Oz   587.8 ms  wasm 37756 B, gzip 18470 B  result 3173702343
+  JavaScript        build ok
+    base 540.9 ms  wasm 0 B, gzip 1160 B  result 3173702343
+    O3   no wasm (skipped)
+    Oz   no wasm (skipped)
+  Kotlin            build ok
+    base 570.7 ms  wasm 10594 B, gzip 7494 B  result 3173702343
+    O3   656.0 ms  wasm 12352 B, gzip 7836 B  result 3173702343
+    Oz   570.8 ms  wasm 10700 B, gzip 7532 B  result 3173702343
+  MoonBit           build ok
+    base 140.0 ms  wasm 6099 B, gzip 3212 B  result 3173702343
+    O3   140.1 ms  wasm 5569 B, gzip 2726 B  result 3173702343
+    Oz   140.0 ms  wasm 4955 B, gzip 2597 B  result 3173702343
+  AssemblyScript    build ok
+    base 132.4 ms  wasm 6554 B, gzip 3392 B  result 3173702343
+    O3   132.4 ms  wasm 6548 B, gzip 3319 B  result 3173702343
+    Oz   132.5 ms  wasm 6537 B, gzip 3323 B  result 3173702343
+  JavaScript: no wasm
+  JavaScript: no wasm
+
+knucleotide: n=500000, setup(500000); 10 samples after 3 warmups; ports: utu-fast, utu-fastUnsafe, utu-small, utu-smallUnsafe, c, cpp, rust, go, swift, haskell, dart, js, kotlin, moonbit, assemblyscript
+  utu fast          build ok
+    base 107.2 ms  wasm 5881 B, gzip 2568 B  result 1583578344
+    O3   102.7 ms  wasm 5285 B, gzip 2577 B  result 1583578344
+    Oz   102.6 ms  wasm 5288 B, gzip 2574 B  result 1583578344
+  utu fastUnsafe    build ok
+    base 103.9 ms  wasm 5644 B, gzip 2398 B  result 1583578344
+    O3   100.6 ms  wasm 5091 B, gzip 2414 B  result 1583578344
+    Oz   100.4 ms  wasm 5094 B, gzip 2411 B  result 1583578344
+  utu small         build ok
+    base 143.4 ms  wasm 3423 B, gzip 2364 B  result 1583578344
+    O3   105.0 ms  wasm 3269 B, gzip 2342 B  result 1583578344
+    Oz   105.3 ms  wasm 3234 B, gzip 2345 B  result 1583578344
+  utu smallUnsafe   build ok
+    base 104.9 ms  wasm 3259 B, gzip 2194 B  result 1583578344
+    O3   102.6 ms  wasm 3137 B, gzip 2166 B  result 1583578344
+    Oz   102.3 ms  wasm 3102 B, gzip 2167 B  result 1583578344
+  C                 build ok
+    base 173.0 ms  wasm 26492 B, gzip 12907 B  result 1583578344
+    O3   172.7 ms  wasm 26434 B, gzip 12779 B  result 1583578344
+    Oz   172.2 ms  wasm 26401 B, gzip 12776 B  result 1583578344
+  C++               build ok
+    base 109.8 ms  wasm 169484 B, gzip 61867 B  result 1583578344
+    O3   109.3 ms  wasm 174954 B, gzip 62229 B  result 1583578344
+    Oz   109.2 ms  wasm 167651 B, gzip 61717 B  result 1583578344
+  Rust              build ok
+    base 127.1 ms  wasm 77738 B, gzip 29687 B  result 1583578344
+    O3   128.7 ms  wasm 64872 B, gzip 26864 B  result 1583578344
+    Oz   129.4 ms  wasm 64778 B, gzip 26954 B  result 1583578344
+  Go                build ok
+    base 725.8 ms  wasm 2577566 B, gzip 746503 B  result 1583578344
+    O3   713.5 ms  wasm 2450059 B, gzip 742515 B  result 1583578344
+    Oz   716.4 ms  wasm 2430419 B, gzip 742397 B  result 1583578344
+  Swift             build ok
+    base 573.1 ms  wasm 5570261 B, gzip 1707522 B  result 1583578344
+    O3   609.8 ms  wasm 3449925 B, gzip 1321252 B  result 1583578344
+    Oz   612.4 ms  wasm 3366148 B, gzip 1319281 B  result 1583578344
+  Haskell           build ok
+    base 2299.6 ms  wasm 2183654 B, gzip 556759 B  result 1583578344
+    O3   2291.2 ms  wasm 1457900 B, gzip 528136 B  result 1583578344
+    Oz   2302.0 ms  wasm 1242701 B, gzip 526794 B  result 1583578344
+  Dart              build ok
+    base 504.1 ms  wasm 56427 B, gzip 24914 B  result 1583578344
+    O3   522.6 ms  wasm 56974 B, gzip 24850 B  result 1583578344
+    Oz   511.8 ms  wasm 55654 B, gzip 24986 B  result 1583578344
+  JavaScript        build ok
+    base 680.5 ms  wasm 0 B, gzip 1448 B  result 1583578344
+    O3   no wasm (skipped)
+    Oz   no wasm (skipped)
+  Kotlin            build ok
+    base 378.1 ms  wasm 18624 B, gzip 11214 B  result 1583578344
+    O3   377.8 ms  wasm 21944 B, gzip 11810 B  result 1583578344
+    Oz   377.9 ms  wasm 18834 B, gzip 11267 B  result 1583578344
+  MoonBit           build ok
+    base 306.6 ms  wasm 15109 B, gzip 6920 B  result 1583578344
+    O3   330.5 ms  wasm 13060 B, gzip 6007 B  result 1583578344
+    Oz   305.5 ms  wasm 11878 B, gzip 5749 B  result 1583578344
+  AssemblyScript    build ok
+    base 291.2 ms  wasm 18589 B, gzip 7903 B  result 1583578344
+    O3   233.1 ms  wasm 18511 B, gzip 7880 B  result 1583578344
+    Oz   221.0 ms  wasm 18403 B, gzip 7876 B  result 1583578344
+  JavaScript: no wasm
+  JavaScript: no wasm
+
+mandelbrot: n=3200; 10 samples after 3 warmups; ports: utu-fast, utu-fastUnsafe, utu-small, utu-smallUnsafe, utu-tuned-fast, utu-tuned-small, c, cpp, rust, go, swift, haskell, dart, js, kotlin, moonbit, assemblyscript
+  utu fast          build ok
+    base 210.1 ms  wasm 1730 B, gzip 1051 B  result 3411461379
+    O3   210.2 ms  wasm 1514 B, gzip 978 B  result 3411461379
+    Oz   220.1 ms  wasm 1479 B, gzip 972 B  result 3411461379
+  utu fastUnsafe    build ok
+    base 210.1 ms  wasm 1730 B, gzip 908 B  result 3411461379
+    O3   210.3 ms  wasm 1514 B, gzip 835 B  result 3411461379
+    Oz   220.1 ms  wasm 1479 B, gzip 829 B  result 3411461379
+  utu small         build ok
+    base 210.1 ms  wasm 1422 B, gzip 1041 B  result 3411461379
+    O3   210.3 ms  wasm 1221 B, gzip 953 B  result 3411461379
+    Oz   220.3 ms  wasm 1212 B, gzip 975 B  result 3411461379
+  utu smallUnsafe   build ok
+    base 210.2 ms  wasm 1422 B, gzip 898 B  result 3411461379
+    O3   210.2 ms  wasm 1221 B, gzip 810 B  result 3411461379
+    Oz   220.3 ms  wasm 1212 B, gzip 832 B  result 3411461379
+  utu tuned fast    build ok
+    base 161.3 ms  wasm 1757 B, gzip 977 B  result 3411461379
+    O3   158.0 ms  wasm 1333 B, gzip 971 B  result 3411461379
+    Oz   158.1 ms  wasm 1332 B, gzip 968 B  result 3411461379
+  utu tuned small   build ok
+    base 161.0 ms  wasm 1674 B, gzip 988 B  result 3411461379
+    O3   158.2 ms  wasm 1279 B, gzip 978 B  result 3411461379
+    Oz   158.2 ms  wasm 1286 B, gzip 992 B  result 3411461379
+  C                 build ok
+    base 161.2 ms  wasm 14740 B, gzip 6840 B  result 3411461379
+    O3   161.4 ms  wasm 14711 B, gzip 6830 B  result 3411461379
+    Oz   161.3 ms  wasm 14690 B, gzip 6833 B  result 3411461379
+  C++               build ok
+    base 152.2 ms  wasm 18570 B, gzip 7892 B  result 3411461379
+    O3   152.4 ms  wasm 18554 B, gzip 7803 B  result 3411461379
+    Oz   152.4 ms  wasm 18538 B, gzip 7796 B  result 3411461379
+  Rust              build ok
+    base 151.7 ms  wasm 22620 B, gzip 10118 B  result 3411461379
+    O3   150.7 ms  wasm 18059 B, gzip 8272 B  result 3411461379
+    Oz   150.4 ms  wasm 18047 B, gzip 8276 B  result 3411461379
+  Go                build ok
+    base 839.4 ms  wasm 2420761 B, gzip 706315 B  result 3411461379
+    O3   836.1 ms  wasm 2301731 B, gzip 701907 B  result 3411461379
+    Oz   829.1 ms  wasm 2285382 B, gzip 702252 B  result 3411461379
+  Swift             build ok
+    base 306.2 ms  wasm 5553594 B, gzip 1699348 B  result 3411461379
+    O3   304.7 ms  wasm 3434953 B, gzip 1317591 B  result 3411461379
+    Oz   302.6 ms  wasm 3351480 B, gzip 1313258 B  result 3411461379
+  Haskell           build ok
+    base 451.3 ms  wasm 1507970 B, gzip 437647 B  result 3411461379
+    O3   497.5 ms  wasm 1056340 B, gzip 418035 B  result 3411461379
+    Oz   496.6 ms  wasm 928009 B, gzip 416173 B  result 3411461379
+  Dart              build ok
+    base 482.5 ms  wasm 36092 B, gzip 16880 B  result 3411461379
+    O3   489.0 ms  wasm 36096 B, gzip 16690 B  result 3411461379
+    Oz   482.0 ms  wasm 35378 B, gzip 16923 B  result 3411461379
+  JavaScript        build ok
+    base 584.6 ms  wasm 0 B, gzip 519 B  result 3411461379
+    O3   no wasm (skipped)
+    Oz   no wasm (skipped)
+  Kotlin            build ok
+    base 531.8 ms  wasm 5215 B, gzip 4988 B  result 3411461379
+    O3   529.4 ms  wasm 6265 B, gzip 5195 B  result 3411461379
+    Oz   525.5 ms  wasm 5239 B, gzip 4999 B  result 3411461379
+  MoonBit           build ok
+    base 491.0 ms  wasm 897 B, gzip 840 B  result 3411461379
+    O3   480.5 ms  wasm 693 B, gzip 706 B  result 3411461379
+    Oz   480.8 ms  wasm 693 B, gzip 706 B  result 3411461379
+  AssemblyScript    build ok
+    base 277.0 ms  wasm 5848 B, gzip 2909 B  result 3411461379
+    O3   277.3 ms  wasm 5842 B, gzip 2853 B  result 3411461379
+    Oz   277.3 ms  wasm 5831 B, gzip 2851 B  result 3411461379
+  JavaScript: no wasm
+  JavaScript: no wasm
+
+nbody: n=2000000; 10 samples after 3 warmups; ports: utu-fast, utu-fastUnsafe, utu-small, utu-smallUnsafe, utu-tuned-fast, utu-tuned-small, c, cpp, rust, go, swift, haskell, dart, js, kotlin, moonbit, assemblyscript
+  utu fast          build ok
+    base 116.8 ms  wasm 3350 B, gzip 1480 B  result 1845223486
+    O3   116.7 ms  wasm 2660 B, gzip 1521 B  result 1845223486
+    Oz   116.8 ms  wasm 2706 B, gzip 1480 B  result 1845223486
+  utu fastUnsafe    build ok
+    base 117.3 ms  wasm 3350 B, gzip 1338 B  result 1845223486
+    O3   116.7 ms  wasm 2660 B, gzip 1379 B  result 1845223486
+    Oz   116.4 ms  wasm 2706 B, gzip 1338 B  result 1845223486
+  utu small         build ok
+    base 115.8 ms  wasm 1676 B, gzip 1418 B  result 1845223486
+    O3   116.2 ms  wasm 1502 B, gzip 1276 B  result 1845223486
+    Oz   116.8 ms  wasm 1582 B, gzip 1318 B  result 1845223486
+  utu smallUnsafe   build ok
+    base 115.5 ms  wasm 1676 B, gzip 1276 B  result 1845223486
+    O3   115.5 ms  wasm 1502 B, gzip 1134 B  result 1845223486
+    Oz   116.3 ms  wasm 1582 B, gzip 1176 B  result 1845223486
+  utu tuned fast    build ok
+    base 96.3 ms  wasm 4852 B, gzip 2274 B  result 1845223486
+    O3   181.4 ms  wasm 5428 B, gzip 2203 B  result 1845223486
+    Oz   181.8 ms  wasm 4933 B, gzip 2187 B  result 1845223486
+  utu tuned small   build ok
+    base 95.9 ms  wasm 4624 B, gzip 2278 B  result 1845223486
+    O3   181.1 ms  wasm 5227 B, gzip 2190 B  result 1845223486
+    Oz   182.4 ms  wasm 4728 B, gzip 2183 B  result 1845223486
+  C                 build ok
+    base 142.0 ms  wasm 16018 B, gzip 7540 B  result 1845223486
+    O3   141.9 ms  wasm 15947 B, gzip 7559 B  result 1845223486
+    Oz   142.1 ms  wasm 15930 B, gzip 7557 B  result 1845223486
+  C++               build ok
+    base 105.0 ms  wasm 16861 B, gzip 7886 B  result 1845223486
+    O3   105.1 ms  wasm 16816 B, gzip 7891 B  result 1845223486
+    Oz   105.1 ms  wasm 16799 B, gzip 7891 B  result 1845223486
+  Rust              build ok
+    base 110.5 ms  wasm 50730 B, gzip 21283 B  result 1845223486
+    O3   110.3 ms  wasm 43766 B, gzip 18624 B  result 1845223486
+    Oz   110.5 ms  wasm 43691 B, gzip 18628 B  result 1845223486
+  Go                build ok
+    base 166.0 ms  wasm 2422236 B, gzip 708645 B  result 1845223486
+    O3   167.0 ms  wasm 2303102 B, gzip 704125 B  result 1845223486
+    Oz   167.1 ms  wasm 2286749 B, gzip 704430 B  result 1845223486
+  Swift             build ok
+    base 166.5 ms  wasm 5555893 B, gzip 1700359 B  result 1845223486
+    O3   166.1 ms  wasm 3438126 B, gzip 1318706 B  result 1845223486
+    Oz   166.5 ms  wasm 3354401 B, gzip 1313755 B  result 1845223486
+  Haskell           build ok
+    base 313.4 ms  wasm 1956118 B, gzip 522115 B  result 1845223486
+    O3   307.8 ms  wasm 1323718 B, gzip 496425 B  result 1845223486
+    Oz   313.4 ms  wasm 1144484 B, gzip 495951 B  result 1845223486
+  Dart              build ok
+    base 159.4 ms  wasm 33729 B, gzip 16185 B  result 1845223486
+    O3   230.7 ms  wasm 33974 B, gzip 16005 B  result 1845223486
+    Oz   159.5 ms  wasm 33017 B, gzip 16225 B  result 1845223486
+  JavaScript        build ok
+    base 164.1 ms  wasm 0 B, gzip 1114 B  result 1845223486
+    O3   no wasm (skipped)
+    Oz   no wasm (skipped)
+  Kotlin            build ok
+    base 146.4 ms  wasm 5745 B, gzip 5430 B  result 1845223486
+    O3   147.3 ms  wasm 6545 B, gzip 5608 B  result 1845223486
+    Oz   146.4 ms  wasm 5810 B, gzip 5450 B  result 1845223486
+  MoonBit           build ok
+    base 127.0 ms  wasm 2124 B, gzip 1510 B  result 1845223486
+    O3   124.7 ms  wasm 1799 B, gzip 1297 B  result 1845223486
+    Oz   124.2 ms  wasm 1879 B, gzip 1302 B  result 1845223486
+  AssemblyScript    build ok
+    base 202.3 ms  wasm 4100 B, gzip 1783 B  result 1845223486
+    O3   202.3 ms  wasm 4087 B, gzip 1726 B  result 1845223486
+    Oz   202.5 ms  wasm 4087 B, gzip 1729 B  result 1845223486
+  JavaScript: no wasm
+  JavaScript: no wasm
+
+pidigits: n=2000; 10 samples after 3 warmups; ports: utu-fast, utu-fastUnsafe, utu-small, utu-smallUnsafe, utu-host-fast, utu-host-small, c, cpp, rust, go, swift, haskell, dart, js, kotlin, moonbit, assemblyscript
+  utu fast          build ok
+    base 169.9 ms  wasm 13350 B, gzip 2664 B  result 3349707335
+    O3   169.5 ms  wasm 11369 B, gzip 2600 B  result 3349707335
+    Oz   169.5 ms  wasm 11561 B, gzip 2606 B  result 3349707335
+  utu fastUnsafe    build ok
+    base 171.0 ms  wasm 13350 B, gzip 2522 B  result 3349707335
+    O3   171.8 ms  wasm 11369 B, gzip 2458 B  result 3349707335
+    Oz   169.2 ms  wasm 11561 B, gzip 2464 B  result 3349707335
+  utu small         build ok
+    base 170.7 ms  wasm 3081 B, gzip 1800 B  result 3349707335
+    O3   170.5 ms  wasm 2860 B, gzip 1759 B  result 3349707335
+    Oz   170.1 ms  wasm 2843 B, gzip 1754 B  result 3349707335
+  utu smallUnsafe   build ok
+    base 170.6 ms  wasm 3081 B, gzip 1658 B  result 3349707335
+    O3   170.9 ms  wasm 2860 B, gzip 1617 B  result 3349707335
+    Oz   170.3 ms  wasm 2843 B, gzip 1612 B  result 3349707335
+  utu host fast     build ok
+    base 369.9 ms  wasm 630 B, gzip 813 B  result 3349707335
+    O3   371.4 ms  wasm 596 B, gzip 805 B  result 3349707335
+    Oz   374.5 ms  wasm 596 B, gzip 805 B  result 3349707335
+  utu host small    build ok
+    base 371.9 ms  wasm 525 B, gzip 790 B  result 3349707335
+    O3   371.6 ms  wasm 519 B, gzip 779 B  result 3349707335
+    Oz   373.5 ms  wasm 504 B, gzip 786 B  result 3349707335
+  C                 build ok
+    base 166.3 ms  wasm 30654 B, gzip 15300 B  result 3349707335
+    O3   166.5 ms  wasm 30641 B, gzip 15159 B  result 3349707335
+    Oz   168.4 ms  wasm 30470 B, gzip 15152 B  result 3349707335
+  C++               build ok
+    base 144.9 ms  wasm 31073 B, gzip 15424 B  result 3349707335
+    O3   145.0 ms  wasm 31343 B, gzip 15352 B  result 3349707335
+    Oz   145.0 ms  wasm 30907 B, gzip 15293 B  result 3349707335
+  Rust              build ok
+    base 336.9 ms  wasm 82910 B, gzip 29507 B  result 3349707335
+    O3   329.1 ms  wasm 66898 B, gzip 25406 B  result 3349707335
+    Oz   333.2 ms  wasm 66823 B, gzip 25399 B  result 3349707335
+  Go                build ok
+    base 175.1 ms  wasm 2349516 B, gzip 683024 B  result 3349707335
+    O3   172.3 ms  wasm 2235084 B, gzip 678810 B  result 3349707335
+    Oz   172.2 ms  wasm 2220451 B, gzip 678570 B  result 3349707335
+  Swift             build ok
+    base 278.5 ms  wasm 5565837 B, gzip 1705609 B  result 3349707335
+    O3   278.9 ms  wasm 3444279 B, gzip 1319505 B  result 3349707335
+    Oz   279.0 ms  wasm 3360993 B, gzip 1316497 B  result 3349707335
+  Haskell           build ok
+    base 269.2 ms  wasm 1507384 B, gzip 437145 B  result 3349707335
+    O3   267.6 ms  wasm 1055622 B, gzip 416948 B  result 3349707335
+    Oz   272.0 ms  wasm 926464 B, gzip 415334 B  result 3349707335
+  Dart              build ok
+    base 228.6 ms  wasm 50009 B, gzip 22761 B  result 3349707335
+    O3   228.0 ms  wasm 50404 B, gzip 22605 B  result 3349707335
+    Oz   227.6 ms  wasm 49272 B, gzip 22884 B  result 3349707335
+  JavaScript        build ok
+    base 221.7 ms  wasm 0 B, gzip 377 B  result 3349707335
+    O3   no wasm (skipped)
+    Oz   no wasm (skipped)
+  Kotlin            build ok
+    base 1694.2 ms  wasm 91760 B, gzip 42172 B  result 3349707335
+    O3   1701.4 ms  wasm 104955 B, gzip 44176 B  result 3349707335
+    Oz   1682.7 ms  wasm 92535 B, gzip 42361 B  result 3349707335
+  MoonBit           build ok
+    base 330.9 ms  wasm 7729 B, gzip 4060 B  result 3349707335
+    O3   332.5 ms  wasm 5673 B, gzip 2910 B  result 3349707335
+    Oz   334.4 ms  wasm 5660 B, gzip 2928 B  result 3349707335
+  AssemblyScript    build ok
+    base 175.1 ms  wasm 9192 B, gzip 4149 B  result 3349707335
+    O3   175.4 ms  wasm 9202 B, gzip 4138 B  result 3349707335
+    Oz   175.4 ms  wasm 9191 B, gzip 4139 B  result 3349707335
+  JavaScript: no wasm
+  JavaScript: no wasm
+
+regexredux: n=500000, setup(500000); 10 samples after 3 warmups; ports: utu-fast, utu-fastUnsafe, utu-small, utu-smallUnsafe, utu-host-fast, utu-host-small, c, cpp, rust, go, swift, haskell, dart, js, kotlin, moonbit, assemblyscript
+  utu fast          build ok
+    base 142.8 ms  wasm 9931 B, gzip 3718 B  result 3755826591
+    O3   140.3 ms  wasm 8467 B, gzip 3655 B  result 3755826591
+    Oz   139.9 ms  wasm 8467 B, gzip 3655 B  result 3755826591
+  utu fastUnsafe    build ok
+    base 134.7 ms  wasm 8035 B, gzip 3375 B  result 3755826591
+    O3   133.9 ms  wasm 7349 B, gzip 3222 B  result 3755826591
+    Oz   134.5 ms  wasm 7349 B, gzip 3222 B  result 3755826591
+  utu small         build ok
+    base 139.0 ms  wasm 5281 B, gzip 3040 B  result 3755826591
+    O3   139.8 ms  wasm 5061 B, gzip 2978 B  result 3755826591
+    Oz   136.6 ms  wasm 4950 B, gzip 2980 B  result 3755826591
+  utu smallUnsafe   build ok
+    base 131.0 ms  wasm 4880 B, gzip 2778 B  result 3755826591
+    O3   130.9 ms  wasm 4735 B, gzip 2688 B  result 3755826591
+    Oz   129.1 ms  wasm 4624 B, gzip 2683 B  result 3755826591
+  utu host fast     build ok
+    base 156.8 ms  wasm 5643 B, gzip 2999 B  result 3755826591
+    O3   156.5 ms  wasm 4907 B, gzip 2996 B  result 3755826591
+    Oz   160.7 ms  wasm 4907 B, gzip 2996 B  result 3755826591
+  utu host small    build ok
+    base 156.9 ms  wasm 3220 B, gzip 2721 B  result 3755826591
+    O3   157.4 ms  wasm 3061 B, gzip 2697 B  result 3755826591
+    Oz   157.8 ms  wasm 3036 B, gzip 2700 B  result 3755826591
+  C                 build ok
+    base 1729.6 ms  wasm 119680 B, gzip 50387 B  result 3755826591
+    O3   1717.1 ms  wasm 119499 B, gzip 50113 B  result 3755826591
+    Oz   1733.3 ms  wasm 119218 B, gzip 50111 B  result 3755826591
+  C++               build ok
+    base 1737.8 ms  wasm 249999 B, gzip 99983 B  result 3755826591
+    O3   1772.6 ms  wasm 255511 B, gzip 100198 B  result 3755826591
+    Oz   1755.3 ms  wasm 247957 B, gzip 99611 B  result 3755826591
+  Rust              build ok
+    base 314.0 ms  wasm 1232886 B, gzip 394342 B  result 3755826591
+    O3   310.6 ms  wasm 1014896 B, gzip 362575 B  result 3755826591
+    Oz   315.0 ms  wasm 993490 B, gzip 361372 B  result 3755826591
+  Go                build ok
+    base 22867.9 ms  wasm 3008651 B, gzip 862455 B  result 3755826591
+    O3   22418.2 ms  wasm 2852071 B, gzip 858140 B  result 3755826591
+    Oz   22809.8 ms  wasm 2834991 B, gzip 858079 B  result 3755826591
+  Swift             build ok
+    base 2531.3 ms  wasm 53790966 B, gzip 19968340 B  result 3755826591
+    O3   2577.6 ms  wasm 46345461 B, gzip 19187265 B  result 3755826591
+    Oz   2418.4 ms  wasm 45810606 B, gzip 19140203 B  result 3755826591
+  Haskell           build ok
+    base 1730.4 ms  wasm 1765232 B, gzip 499192 B  result 3755826591
+    O3   1692.7 ms  wasm 1245728 B, gzip 475325 B  result 3755826591
+    Oz   1699.2 ms  wasm 1076984 B, gzip 473868 B  result 3755826591
+  Dart              build ok
+    base 178.0 ms  wasm 39222 B, gzip 18401 B  result 3755826591
+    O3   177.3 ms  wasm 39480 B, gzip 18333 B  result 3755826591
+    Oz   178.8 ms  wasm 38518 B, gzip 18459 B  result 3755826591
+  JavaScript        build ok
+    base 160.7 ms  wasm 0 B, gzip 984 B  result 3755826591
+    O3   no wasm (skipped)
+    Oz   no wasm (skipped)
+  Kotlin            build ok
+    base 4123.6 ms  wasm 176350 B, gzip 77725 B  result 3755826591
+    O3   4160.1 ms  wasm 208907 B, gzip 81955 B  result 3755826591
+    Oz   4121.4 ms  wasm 177232 B, gzip 77954 B  result 3755826591
+  MoonBit           build ok
+    base 368.4 ms  wasm 81447 B, gzip 24937 B  result 3755826591
+    O3   378.5 ms  wasm 71303 B, gzip 20057 B  result 3755826591
+    Oz   374.6 ms  wasm 65109 B, gzip 19305 B  result 3755826591
+  AssemblyScript    build ok
+    base 1172.0 ms  wasm 14332 B, gzip 6382 B  result 3755826591
+    O3   1171.0 ms  wasm 14324 B, gzip 6356 B  result 3755826591
+    Oz   1169.8 ms  wasm 14307 B, gzip 6363 B  result 3755826591
+  JavaScript: no wasm
+  JavaScript: no wasm
+
+revcomp: n=5000000, setup(5000000); 10 samples after 3 warmups; ports: utu-fast, utu-fastUnsafe, utu-small, utu-smallUnsafe, c, cpp, rust, go, swift, haskell, dart, js, kotlin, moonbit, assemblyscript
+  utu fast          build ok
+    base 140.8 ms  wasm 10112 B, gzip 3453 B  result 2124125449
+    O3   141.9 ms  wasm 7544 B, gzip 3219 B  result 2124125449
+    Oz   141.8 ms  wasm 7512 B, gzip 3211 B  result 2124125449
+  utu fastUnsafe    build ok
+    base 122.8 ms  wasm 8618 B, gzip 3025 B  result 2124125449
+    O3   124.3 ms  wasm 7242 B, gzip 2785 B  result 2124125449
+    Oz   124.3 ms  wasm 7228 B, gzip 2774 B  result 2124125449
+  utu small         build ok
+    base 146.6 ms  wasm 4594 B, gzip 2578 B  result 2124125449
+    O3   141.2 ms  wasm 4118 B, gzip 2524 B  result 2124125449
+    Oz   141.5 ms  wasm 4112 B, gzip 2516 B  result 2124125449
+  utu smallUnsafe   build ok
+    base 122.7 ms  wasm 3667 B, gzip 2215 B  result 2124125449
+    O3   121.9 ms  wasm 3441 B, gzip 2161 B  result 2124125449
+    Oz   122.7 ms  wasm 3435 B, gzip 2155 B  result 2124125449
+  C                 build ok
+    base 103.1 ms  wasm 18655 B, gzip 7642 B  result 2124125449
+    O3   103.2 ms  wasm 18646 B, gzip 7503 B  result 2124125449
+    Oz   103.2 ms  wasm 18632 B, gzip 7500 B  result 2124125449
+  C++               build ok
+    base 260.6 ms  wasm 141263 B, gzip 55365 B  result 2124125449
+    O3   261.0 ms  wasm 146833 B, gzip 55741 B  result 2124125449
+    Oz   260.5 ms  wasm 139695 B, gzip 55189 B  result 2124125449
+  Rust              build ok
+    base 94.4 ms  wasm 42379 B, gzip 19049 B  result 2124125449
+    O3   95.1 ms  wasm 24457 B, gzip 11813 B  result 2124125449
+    Oz   95.6 ms  wasm 24447 B, gzip 11810 B  result 2124125449
+  Go                build ok
+    base 235.3 ms  wasm 1926917 B, gzip 572545 B  result 2124125449
+    O3   221.0 ms  wasm 1832406 B, gzip 569114 B  result 2124125449
+    Oz   218.4 ms  wasm 1823956 B, gzip 568891 B  result 2124125449
+  Swift             build ok
+    base 146.9 ms  wasm 5563436 B, gzip 1703743 B  result 2124125449
+    O3   146.1 ms  wasm 3446934 B, gzip 1320515 B  result 2124125449
+    Oz   145.6 ms  wasm 3362385 B, gzip 1317203 B  result 2124125449
+  Haskell           build ok
+    base 290.4 ms  wasm 1642651 B, gzip 464486 B  result 2124125449
+    O3   310.9 ms  wasm 1144931 B, gzip 443051 B  result 2124125449
+    Oz   301.9 ms  wasm 997546 B, gzip 440949 B  result 2124125449
+  Dart              build ok
+    base 899.3 ms  wasm 41295 B, gzip 19669 B  result 2124125449
+    O3   895.7 ms  wasm 41371 B, gzip 19547 B  result 2124125449
+    Oz   899.6 ms  wasm 40601 B, gzip 19717 B  result 2124125449
+  JavaScript        build ok
+    base 617.2 ms  wasm 0 B, gzip 2143 B  result 2124125449
+    O3   no wasm (skipped)
+    Oz   no wasm (skipped)
+  Kotlin            build ok
+    base 444.2 ms  wasm 11335 B, gzip 7878 B  result 2124125449
+    O3   502.1 ms  wasm 13180 B, gzip 8233 B  result 2124125449
+    Oz   443.9 ms  wasm 11441 B, gzip 7914 B  result 2124125449
+  MoonBit           build ok
+    base 196.6 ms  wasm 7818 B, gzip 4062 B  result 2124125449
+    O3   193.9 ms  wasm 7182 B, gzip 3462 B  result 2124125449
+    Oz   167.0 ms  wasm 6508 B, gzip 3332 B  result 2124125449
+  AssemblyScript    build ok
+    base 118.0 ms  wasm 8419 B, gzip 4260 B  result 2124125449
+    O3   118.0 ms  wasm 8417 B, gzip 4233 B  result 2124125449
+    Oz   117.7 ms  wasm 8406 B, gzip 4228 B  result 2124125449
+  JavaScript: no wasm
+  JavaScript: no wasm
+
+spectralnorm: n=2000; 10 samples after 3 warmups; ports: utu-fast, utu-fastUnsafe, utu-small, utu-smallUnsafe, utu-tuned-fast, utu-tuned-small, c, cpp, rust, go, swift, haskell, dart, js, kotlin, moonbit, assemblyscript
+  utu fast          build ok
+    base 111.0 ms  wasm 2642 B, gzip 878 B  result 2982777735
+    O3   114.1 ms  wasm 2298 B, gzip 1016 B  result 2982777735
+    Oz   114.0 ms  wasm 2298 B, gzip 1016 B  result 2982777735
+  utu fastUnsafe    build ok
+    base 111.0 ms  wasm 2642 B, gzip 736 B  result 2982777735
+    O3   114.1 ms  wasm 2298 B, gzip 874 B  result 2982777735
+    Oz   114.1 ms  wasm 2298 B, gzip 874 B  result 2982777735
+  utu small         build ok
+    base 115.2 ms  wasm 857 B, gzip 815 B  result 2982777735
+    O3   115.2 ms  wasm 797 B, gzip 807 B  result 2982777735
+    Oz   115.3 ms  wasm 798 B, gzip 813 B  result 2982777735
+  utu smallUnsafe   build ok
+    base 115.3 ms  wasm 857 B, gzip 673 B  result 2982777735
+    O3   115.1 ms  wasm 797 B, gzip 665 B  result 2982777735
+    Oz   115.2 ms  wasm 798 B, gzip 671 B  result 2982777735
+  utu tuned fast    build ok
+    base 103.6 ms  wasm 925 B, gzip 951 B  result 2982777735
+    O3   187.6 ms  wasm 861 B, gzip 894 B  result 2982777735
+    Oz   104.1 ms  wasm 882 B, gzip 912 B  result 2982777735
+  utu tuned small   build ok
+    base 103.6 ms  wasm 877 B, gzip 955 B  result 2982777735
+    O3   187.7 ms  wasm 799 B, gzip 910 B  result 2982777735
+    Oz   188.3 ms  wasm 800 B, gzip 912 B  result 2982777735
+  C                 build ok
+    base 96.2 ms  wasm 20009 B, gzip 9402 B  result 2982777735
+    O3   96.3 ms  wasm 19968 B, gzip 9439 B  result 2982777735
+    Oz   96.3 ms  wasm 19940 B, gzip 9437 B  result 2982777735
+  C++               build ok
+    base 194.0 ms  wasm 11085 B, gzip 6017 B  result 2982777735
+    O3   194.0 ms  wasm 11040 B, gzip 6014 B  result 2982777735
+    Oz   194.1 ms  wasm 11023 B, gzip 6018 B  result 2982777735
+  Rust              build ok
+    base 67.9 ms  wasm 47852 B, gzip 20184 B  result 2982777735
+    O3   67.9 ms  wasm 39670 B, gzip 17599 B  result 2982777735
+    Oz   67.9 ms  wasm 39595 B, gzip 17600 B  result 2982777735
+  Go                build ok
+    base 247.0 ms  wasm 2421442 B, gzip 706454 B  result 2982777735
+    O3   247.0 ms  wasm 2302341 B, gzip 701997 B  result 2982777735
+    Oz   247.1 ms  wasm 2285989 B, gzip 702333 B  result 2982777735
+  Swift             build ok
+    base 196.1 ms  wasm 5552362 B, gzip 1698534 B  result 2982777735
+    O3   196.0 ms  wasm 3433510 B, gzip 1317234 B  result 2982777735
+    Oz   196.0 ms  wasm 3350037 B, gzip 1313367 B  result 2982777735
+  Haskell           build ok
+    base 195.4 ms  wasm 1951378 B, gzip 519983 B  result 2982777735
+    O3   195.8 ms  wasm 1320268 B, gzip 494897 B  result 2982777735
+    Oz   195.8 ms  wasm 1141117 B, gzip 494141 B  result 2982777735
+  Dart              build ok
+    base 461.2 ms  wasm 36421 B, gzip 16903 B  result 2982777735
+    O3   205.0 ms  wasm 36469 B, gzip 16729 B  result 2982777735
+    Oz   460.8 ms  wasm 35709 B, gzip 16939 B  result 2982777735
+  JavaScript        build ok
+    base 224.6 ms  wasm 0 B, gzip 337 B  result 2982777735
+    O3   no wasm (skipped)
+    Oz   no wasm (skipped)
+  Kotlin            build ok
+    base 198.8 ms  wasm 3286 B, gzip 4037 B  result 2982777735
+    O3   199.5 ms  wasm 3630 B, gzip 4125 B  result 2982777735
+    Oz   198.8 ms  wasm 3337 B, gzip 4057 B  result 2982777735
+  MoonBit           build ok
+    base 201.6 ms  wasm 927 B, gzip 809 B  result 2982777735
+    O3   202.0 ms  wasm 755 B, gzip 694 B  result 2982777735
+    Oz   460.5 ms  wasm 755 B, gzip 703 B  result 2982777735
+  AssemblyScript    build ok
+    base 108.7 ms  wasm 4910 B, gzip 2734 B  result 2982777735
+    O3   108.9 ms  wasm 4904 B, gzip 2675 B  result 2982777735
+    Oz   108.9 ms  wasm 4893 B, gzip 2670 B  result 2982777735
+  JavaScript: no wasm
+  JavaScript: no wasm

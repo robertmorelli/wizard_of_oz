@@ -1,0 +1,19 @@
+# Virtualenvs and caches
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+.zig-cache/
+
+# Build outputs and binaries
+compilers/build/
+native/build/
+native/one/
+native/anomalies/knucleotide-min/min-O*
+native/anomalies/knucleotide-min/tiny-O*
+*.o
+*.trace/
+
+# External/private JPL compiler sources and 12MB generated input
+compilers/src/
+compilers/t3.jpl

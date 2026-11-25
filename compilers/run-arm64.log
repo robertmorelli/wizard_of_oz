@@ -1,0 +1,41 @@
+
+bobby (Zig)
+  O3  lex           61.8 ms  text 318828 B  out 48374083 B 1a66c6bf4a15
+  O3  parse        124.2 ms  text 318828 B  out 28220489 B 142c338bab06
+  O3  typecheck    145.3 ms  text 318828 B  out 46454125 B e0125b1becbc
+  Oz  lex           62.1 ms  text 112220 B  out 48374083 B 1a66c6bf4a15
+  Oz  parse        180.1 ms  text 112220 B  out 28220489 B 142c338bab06
+  Oz  typecheck    224.5 ms  text 112220 B  out 46454125 B e0125b1becbc
+
+edward (Rust)
+  O3  lex          162.1 ms  text 1378364 B  out 48374111 B 4f7f7ee3fc74
+  O3  parse        302.9 ms  text 1378364 B  out 28220508 B e96e66c688ca
+  O3  typecheck    431.4 ms  text 1378364 B  out 46454149 B ebbf9f006de4
+  Os  lex          196.3 ms  text 1158844 B  out 48374111 B 4f7f7ee3fc74
+  Os  parse        340.6 ms  text 1158844 B  out 28220508 B e96e66c688ca
+  Os  typecheck    471.8 ms  text 1158844 B  out 46454149 B ebbf9f006de4
+  Oz  lex          322.0 ms  text 999548 B  out 48374111 B 4f7f7ee3fc74
+  Oz  parse        497.7 ms  text 999548 B  out 28220508 B e96e66c688ca
+  Oz  typecheck    669.6 ms  text 999548 B  out 46454149 B ebbf9f006de4
+
+stefan (Rust)
+  O3  lex           87.9 ms  text 709500 B  out 48374083 B 1a66c6bf4a15
+  O3  parse        226.6 ms  text 709500 B  out 28220489 B 142c338bab06
+  O3  typecheck    284.3 ms  text 709500 B  out 46454125 B e0125b1becbc
+  Os  lex           98.6 ms  text 602492 B  out 48374083 B 1a66c6bf4a15
+  Os  parse        236.2 ms  text 602492 B  out 28220489 B 142c338bab06
+  Os  typecheck    292.0 ms  text 602492 B  out 46454125 B e0125b1becbc
+  Oz  lex          222.7 ms  text 537084 B  out 48374083 B 1a66c6bf4a15
+  Oz  parse        361.1 ms  text 537084 B  out 28220489 B 142c338bab06
+  Oz  typecheck    430.3 ms  text 537084 B  out 46454125 B e0125b1becbc
+
+henry (Rust)
+  O3  lex          197.2 ms  text 289020 B  out 48374110 B 80aebb611353
+  O3  parse        280.2 ms  text 289020 B  out 28220507 B 09af76cc28ff
+  O3  typecheck    342.8 ms  text 289020 B  out 46454148 B b1602eca5abf
+  Os  lex          198.1 ms  text 280380 B  out 48374110 B 80aebb611353
+  Os  parse        290.9 ms  text 280380 B  out 28220507 B 09af76cc28ff
+  Os  typecheck    354.8 ms  text 280380 B  out 46454148 B b1602eca5abf
+  Oz  lex          243.8 ms  text 274364 B  out 48374110 B 80aebb611353
+  Oz  parse        342.0 ms  text 274364 B  out 28220507 B 09af76cc28ff
+  Oz  typecheck    424.6 ms  text 274364 B  out 46454148 B b1602eca5abf

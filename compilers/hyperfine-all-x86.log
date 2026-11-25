@@ -1,0 +1,78 @@
+== bobby -l
+Benchmark 1: O3
+  Time (mean ± σ):      88.9 ms ±   0.4 ms    [User: 58.6 ms, System: 36.9 ms]
+Benchmark 2: Oz
+  Time (mean ± σ):      89.0 ms ±   0.3 ms    [User: 58.9 ms, System: 37.1 ms]
+== bobby -p
+Benchmark 1: O3
+  Time (mean ± σ):     175.3 ms ±   5.3 ms    [User: 126.6 ms, System: 63.1 ms]
+Benchmark 2: Oz
+  Time (mean ± σ):     206.1 ms ±   2.1 ms    [User: 155.4 ms, System: 68.1 ms]
+== bobby -t
+Benchmark 1: O3
+  Time (mean ± σ):     215.0 ms ±   9.1 ms    [User: 150.2 ms, System: 82.1 ms]
+Benchmark 2: Oz
+  Time (mean ± σ):     269.6 ms ±  13.0 ms    [User: 210.3 ms, System: 79.8 ms]
+== edward -l
+Benchmark 1: O3
+  Time (mean ± σ):     270.1 ms ±  16.0 ms    [User: 145.9 ms, System: 146.3 ms]
+Benchmark 2: Os
+  Time (mean ± σ):     303.6 ms ±   7.0 ms    [User: 190.6 ms, System: 138.3 ms]
+Benchmark 3: Oz
+  Time (mean ± σ):     386.9 ms ±  23.9 ms    [User: 271.7 ms, System: 147.1 ms]
+== edward -p
+Benchmark 1: O3
+  Time (mean ± σ):     917.4 ms ± 130.6 ms    [User: 463.0 ms, System: 514.4 ms]
+Benchmark 2: Os
+  Time (mean ± σ):     985.8 ms ± 162.9 ms    [User: 499.0 ms, System: 550.9 ms]
+Benchmark 3: Oz
+  Time (mean ± σ):      1.036 s ±  0.119 s    [User: 0.595 s, System: 0.515 s]
+== edward -t
+Benchmark 1: O3
+  Time (mean ± σ):      1.096 s ±  0.012 s    [User: 0.690 s, System: 0.500 s]
+Benchmark 2: Os
+  Time (mean ± σ):      1.138 s ±  0.027 s    [User: 0.725 s, System: 0.501 s]
+Benchmark 3: Oz
+  Time (mean ± σ):      1.294 s ±  0.072 s    [User: 0.863 s, System: 0.518 s]
+== stefan -l
+Benchmark 1: O3
+  Time (mean ± σ):     138.5 ms ±  11.1 ms    [User: 80.4 ms, System: 67.9 ms]
+Benchmark 2: Os
+  Time (mean ± σ):     156.8 ms ±   8.6 ms    [User: 101.0 ms, System: 68.3 ms]
+Benchmark 3: Oz
+  Time (mean ± σ):     227.1 ms ±   4.5 ms    [User: 180.3 ms, System: 65.9 ms]
+== stefan -p
+Benchmark 1: O3
+  Time (mean ± σ):     667.4 ms ± 101.9 ms    [User: 326.1 ms, System: 390.2 ms]
+Benchmark 2: Os
+  Time (mean ± σ):     674.5 ms ±  93.5 ms    [User: 353.1 ms, System: 375.2 ms]
+Benchmark 3: Oz
+  Time (mean ± σ):     755.7 ms ±  31.1 ms    [User: 462.7 ms, System: 356.4 ms]
+== stefan -t
+Benchmark 1: O3
+  Time (mean ± σ):     737.8 ms ±  14.5 ms    [User: 431.8 ms, System: 369.6 ms]
+Benchmark 2: Os
+  Time (mean ± σ):     786.8 ms ±  29.6 ms    [User: 482.9 ms, System: 368.1 ms]
+Benchmark 3: Oz
+  Time (mean ± σ):      1.020 s ±  0.154 s    [User: 0.631 s, System: 0.465 s]
+== henry -l
+Benchmark 1: O3
+  Time (mean ± σ):     260.7 ms ±   9.0 ms    [User: 187.0 ms, System: 95.9 ms]
+Benchmark 2: Os
+  Time (mean ± σ):     277.5 ms ±  16.3 ms    [User: 193.8 ms, System: 99.4 ms]
+Benchmark 3: Oz
+  Time (mean ± σ):     290.1 ms ±  18.6 ms    [User: 214.8 ms, System: 99.1 ms]
+== henry -p
+Benchmark 1: O3
+  Time (mean ± σ):     411.1 ms ±   7.3 ms    [User: 265.7 ms, System: 181.1 ms]
+Benchmark 2: Os
+  Time (mean ± σ):     423.1 ms ±  10.2 ms    [User: 271.6 ms, System: 188.1 ms]
+Benchmark 3: Oz
+  Time (mean ± σ):     466.5 ms ±  44.1 ms    [User: 297.6 ms, System: 199.1 ms]
+== henry -t
+Benchmark 1: O3
+  Time (mean ± σ):     620.1 ms ±  37.7 ms    [User: 374.6 ms, System: 297.9 ms]
+Benchmark 2: Os
+  Time (mean ± σ):     657.7 ms ±  61.9 ms    [User: 385.3 ms, System: 317.2 ms]
+Benchmark 3: Oz
+  Time (mean ± σ):     673.8 ms ±  28.9 ms    [User: 434.8 ms, System: 295.5 ms]
